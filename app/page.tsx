@@ -33,8 +33,34 @@ export default function Home() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
+          {/* full video
           <video
             className="absolute inset-0 h-full w-full object-cover"
+            src={saveTheDateVideo}
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            onEnded={reveal}
+            onError={() => {
+              console.error('The Save the Date video could not be loaded.');
+            }}
+          />
+          */}
+          {/* Blurred background */}
+          <video
+            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-40 blur-2xl"
+            src={saveTheDateVideo}
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="auto"
+          />
+
+          {/* Main video — full frame visible */}
+          <video
+            className="absolute inset-0 h-full w-full object-contain"
             src={saveTheDateVideo}
             autoPlay
             muted
