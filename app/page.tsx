@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, Sparkles } from 'lucide-react';
 
 const weddingDate = new Date('2026-12-04T17:00:00+05:30').getTime();
+const saveTheDateVideo = 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/IMG_1665.MOV';
 const photos = [
   { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85', alt: 'Romantic wedding details' },
   { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85', alt: 'A celebration of love' },
@@ -23,6 +24,58 @@ export default function Home() {
   }, []);
   const reveal = () => { setOpened(true); window.setTimeout(() => document.getElementById('invitation')?.scrollIntoView({ behavior: 'smooth' }), 550); };
   return <main>
+    
+    <AnimatePresence>
+      {!opened && (
+        <motion.div
+          className="fixed inset-0 z-[100] overflow-hidden bg-[#f8f4ec]"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+        >
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            src={saveTheDateVideo}
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            onEnded={reveal}
+            onError={() => {
+              console.error('The Save the Date video could not be loaded.');
+            }}
+          />
+
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
+            <p className="mb-3 text-[10px] uppercase tracking-[0.38em] text-[#f3dfb6] sm:text-xs">
+              Save the Date
+            </p>
+
+            <h1 className="text-4xl font-normal sm:text-6xl">
+              Shashitha <span className="italic text-[#ead4a7]">&</span> Ashani
+            </h1>
+
+            <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
+
+            <p className="mt-4 text-xs tracking-[0.2em] text-white/90 sm:text-sm">
+              04 · 12 · 2026
+            </p>
+          </div>
+
+          <div className="pointer-events-none absolute inset-0 border-[10px] border-[#f5ead5]/25 sm:border-[18px]" />
+
+          <button
+            className="absolute bottom-5 right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white"
+            onClick={reveal}
+          >
+            Skip video
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
+
     <button className="music-toggle" onClick={() => setMusicOn(v => !v)} aria-label={musicOn ? 'Turn music off' : 'Turn music on'}>{musicOn ? <Music2 size={16}/> : <VolumeX size={16}/>}<span>{musicOn ? 'Music on' : 'Music off'}</span></button>
     <section className="opening" aria-label="Open your invitation">
       <div className="opening-grain" />
