@@ -47,7 +47,7 @@ export default function Home() {
             }}
           />
           */}
-          {/* Blurred background */}
+          {/* Blurred background  blur-sm blur blur-md blur-lg blur-2xl*/}
           <video
             className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-md"
             src={saveTheDateVideo}
@@ -72,6 +72,8 @@ export default function Home() {
             }}
           />
 
+        {/*
+
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
 
           <div className="pointer-events-none absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
@@ -92,6 +94,8 @@ export default function Home() {
 
           <div className="pointer-events-none absolute inset-0 border-[10px] border-[#f5ead5]/25 sm:border-[18px]" />
 
+        */}
+        
           <button
             className="absolute bottom-5 right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white"
             onClick={reveal}
