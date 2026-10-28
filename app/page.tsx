@@ -34,7 +34,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
           <video
-            className="absolute inset-0 h-full w-full object-contain"
+            className="absolute inset-0 h-full w-full object-cover"
             src={saveTheDateVideo}
             autoPlay
             muted
