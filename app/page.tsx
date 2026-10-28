@@ -33,6 +33,18 @@ export default function Home() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
+          {/* Blurred background */}
+          <video
+            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-40 blur-2xl"
+            src={saveTheDateVideo}
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="auto"
+          />
+
+          {/* Main video — full frame visible */}
           <video
             className="absolute inset-0 h-full w-full object-contain"
             src={saveTheDateVideo}
