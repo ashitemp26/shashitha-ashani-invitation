@@ -49,7 +49,7 @@ export default function Home() {
           */}
           {/* Blurred background */}
           <video
-            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-40 blur-2xl"
+            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-md"
             src={saveTheDateVideo}
             autoPlay
             muted
