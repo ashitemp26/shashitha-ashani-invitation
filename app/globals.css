@@ -18,6 +18,8 @@
 .invitation-section .couple-names{font-size:clamp(50px,8vh,72px);line-height:.82;margin:clamp(8px,1.8vh,18px) 0}
 .invitation-section .couple-names i{font-size:clamp(32px,5vh,42px)}
 .invitation-section .date-lockup{margin:clamp(10px,2vh,20px) auto clamp(8px,1.5vh,16px)}
+.invitation-section .date-day,.invitation-section .date-month{font-size:clamp(10px,1.5vh,14px)}
+.invitation-section .event-time{font-family:var(--font-cormorant),serif;font-size:clamp(17px,2.2vh,21px);line-height:1.2;color:var(--ink);margin:0 0 8px}
 .invitation-section .venue-name{margin:0 0 3px}
 .invitation-section .venue-note{margin:0}
 
