@@ -153,19 +153,19 @@ export default function Home() {
     <h2>We saved you <em>a place</em><br/>in our happiest day.</h2>
     <p>Having you with us would mean the world.</p>
     
-     {/*
+     
     <div className="closing-monogram">A <span>&</span> S</div>
     <p className="closing-names">ASHANI & SHASHITHA</p>
     <p className="closing-date">04 · 12 · 2026 &nbsp; | &nbsp; SAFFRON, WADDUWA</p>
     <a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a></section>
-      */}
+      
     
     <section className="rsvp-section section-pad" id="rsvp">
       <div className="rsvp-inner">
         <p className="eyebrow">Kindly reply</p>
         <h2>Will you join <em>us?</em></h2>
         <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
-      {/*  <p className="rsvp-note">Your reply will be shared privately with the couple.</p> */}
+        <p className="rsvp-note">Your reply will be shared privately with the couple.</p> 
         <form className="rsvp-form" onSubmit={async event => {
           event.preventDefault();
           const form = event.currentTarget;
