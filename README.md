@@ -15,7 +15,7 @@ RSVP responses are stored in Neon Postgres. To connect it to Vercel:
 
 1. Add the Neon integration to the Vercel project and create or connect a database.
 2. Ensure the project has a `DATABASE_URL` environment variable from Neon in Development, Preview and Production.
-3. Run [`db/schema.sql`](db/schema.sql) once in the Neon SQL Editor to create the RSVP table.
+3. Run [`db/schema.sql`](db/schema.sql) in the Neon SQL Editor to create or update the RSVP table. It preserves existing submissions while making the old email and guest-count fields optional.
 4. Redeploy the Vercel project so the function can use the database connection.
 
 The public form can insert responses but cannot read them back. Review submissions in the Neon SQL Editor and restrict database access to trusted project members. Names, email addresses and optional notes are personal data; configure retention and access accordingly.

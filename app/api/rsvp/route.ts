@@ -23,18 +23,18 @@ export async function POST(request: Request) {
   }
 
   const name = typeof data.name === 'string' ? data.name.trim() : '';
-  const email = typeof data.email === 'string' ? data.email.trim().toLowerCase() : '';
   const attendance = data.attendance;
-  const notes = typeof data.notes === 'string' ? data.notes.trim() : '';
   const guestCount = attendance === 'yes' ? Number(data.guests) : 0;
-  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const team = data.team;
+  const relationship = data.relationship;
 
   if (
     !name || name.length > 120 ||
-    !validEmail || email.length > 254 ||
     (attendance !== 'yes' && attendance !== 'no') ||
     (attendance === 'yes' && (!Number.isInteger(guestCount) || guestCount < 1 || guestCount > 4)) ||
-    notes.length > 1000
+    (attendance === 'yes' &&
+      ((team !== 'bride' && team !== 'groom') ||
+        (relationship !== 'relative' && relationship !== 'friend')))
   ) {
     return NextResponse.json({ error: 'Please check your details and try again.' }, { status: 400 });
   }
@@ -42,8 +42,16 @@ export async function POST(request: Request) {
   try {
     const sql = neon(databaseUrl);
     await sql`
-      INSERT INTO rsvps (name, email, attendance, guest_count, notes)
-      VALUES (${name}, ${email}, ${attendance === 'yes'}, ${guestCount}, ${notes})
+      INSERT INTO rsvps (name, email, attendance, guest_count, notes, team, relationship)
+      VALUES (
+        ${name},
+        NULL,
+        ${attendance === 'yes'},
+        ${guestCount},
+        '',
+        ${attendance === 'yes' ? team : null},
+        ${attendance === 'yes' ? relationship : null}
+      )
     `;
 
     return NextResponse.json({ success: true }, { status: 201 });

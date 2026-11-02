@@ -20,6 +20,9 @@ export default function Home() {
   const [musicOn, setMusicOn] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState('');
   const [rsvpSending, setRsvpSending] = useState(false);
+  const [attendance, setAttendance] = useState<'yes' | 'no' | ''>('');
+  const [rsvpTeam, setRsvpTeam] = useState<'bride' | 'groom' | ''>('');
+  const [rsvpRelationship, setRsvpRelationship] = useState<'relative' | 'friend' | ''>('');
   useEffect(() => {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
@@ -159,6 +162,14 @@ export default function Home() {
           event.preventDefault();
           const form = event.currentTarget;
           const formData = new FormData(form);
+          if (!attendance) {
+            setRsvpStatus('Please choose a response.');
+            return;
+          }
+          if (attendance === 'yes' && (!rsvpTeam || !rsvpRelationship)) {
+            setRsvpStatus('Please answer both questions so we know how to welcome you.');
+            return;
+          }
           setRsvpSending(true);
           setRsvpStatus('');
           try {
@@ -167,10 +178,10 @@ export default function Home() {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                 name: formData.get('name'),
-                email: formData.get('email'),
-                attendance: formData.get('attendance'),
+                attendance,
                 guests: Number(formData.get('guests')),
-                notes: formData.get('notes'),
+                team: attendance === 'yes' ? rsvpTeam : null,
+                relationship: attendance === 'yes' ? rsvpRelationship : null,
                 website: formData.get('website'),
               }),
             });
@@ -178,6 +189,9 @@ export default function Home() {
             if (!response.ok) throw new Error(result.error || 'We could not save your RSVP. Please try again.');
             setRsvpStatus('Thank you. Your RSVP has been received.');
             form.reset();
+            setAttendance('');
+            setRsvpTeam('');
+            setRsvpRelationship('');
           } catch (error) {
             setRsvpStatus(error instanceof Error ? error.message : 'We could not save your RSVP. Please try again.');
           } finally {
@@ -185,12 +199,32 @@ export default function Home() {
           }
         }}>
           <div className="rsvp-honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
-          <label>Your name<input name="name" autoComplete="name" required /></label>
-          <label>Email address<input name="email" type="email" autoComplete="email" required /></label>
-          <label>Will you attend?<select name="attendance" defaultValue="" required><option value="" disabled>Select a response</option><option value="yes">Joyfully accepts</option><option value="no">Regretfully declines</option></select></label>
-          <label>Number of guests<select name="guests" defaultValue="1"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></label>
-          <label className="rsvp-notes">Dietary requirements or a note<textarea name="notes" rows={2} /></label>
-          <button type="submit" className="rsvp-submit" disabled={rsvpSending}>{rsvpSending ? 'Sending…' : 'Send RSVP'} <ArrowUpRight size={15}/></button>
+          <fieldset className="rsvp-question rsvp-response">
+            <legend>Your response</legend>
+            <div className="rsvp-options">
+              <button type="button" className={`rsvp-option${attendance === 'yes' ? ' is-selected' : ''}`} aria-pressed={attendance === 'yes'} onClick={() => { setAttendance('yes'); setRsvpTeam(''); setRsvpRelationship(''); setRsvpStatus(''); }}>Joyfully accepts</button>
+              <button type="button" className={`rsvp-option${attendance === 'no' ? ' is-selected' : ''}`} aria-pressed={attendance === 'no'} onClick={() => { setAttendance('no'); setRsvpTeam(''); setRsvpRelationship(''); setRsvpStatus(''); }}>Regretfully declines</button>
+            </div>
+          </fieldset>
+          {attendance === 'yes' && <>
+            <fieldset className="rsvp-question">
+              <legend>Q1: Which team are you in?</legend>
+              <div className="rsvp-options">
+                <button type="button" className={`rsvp-option${rsvpTeam === 'bride' ? ' is-selected' : ''}`} aria-pressed={rsvpTeam === 'bride'} onClick={() => { setRsvpTeam('bride'); setRsvpStatus(''); }}>Bride</button>
+                <button type="button" className={`rsvp-option${rsvpTeam === 'groom' ? ' is-selected' : ''}`} aria-pressed={rsvpTeam === 'groom'} onClick={() => { setRsvpTeam('groom'); setRsvpStatus(''); }}>Groom</button>
+              </div>
+            </fieldset>
+            <fieldset className="rsvp-question">
+              <legend>Q2: How do you know the couple?</legend>
+              <div className="rsvp-options">
+                <button type="button" className={`rsvp-option${rsvpRelationship === 'relative' ? ' is-selected' : ''}`} aria-pressed={rsvpRelationship === 'relative'} onClick={() => { setRsvpRelationship('relative'); setRsvpStatus(''); }}>Relative</button>
+                <button type="button" className={`rsvp-option${rsvpRelationship === 'friend' ? ' is-selected' : ''}`} aria-pressed={rsvpRelationship === 'friend'} onClick={() => { setRsvpRelationship('friend'); setRsvpStatus(''); }}>Friend</button>
+              </div>
+            </fieldset>
+          </>}
+          <label className="rsvp-name">Your good name<input name="name" autoComplete="name" maxLength={120} required /></label>
+          {attendance === 'yes' && <label className="rsvp-guest-count">Number attending, including you<select name="guests" defaultValue="" required><option value="" disabled>Select guest count</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label>}
+          <button type="submit" className="rsvp-submit" disabled={rsvpSending}>{rsvpSending ? 'Sending…' : 'Submit'} <ArrowUpRight size={15}/></button>
           {rsvpStatus && <p className="rsvp-status" role="status">{rsvpStatus}</p>}
         </form>
       </div>
