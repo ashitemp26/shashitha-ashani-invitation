@@ -30,20 +30,20 @@
 .rsvp-inner>h2 em{font-family:var(--font-script),cursive;color:var(--gold);font-weight:400}
 .rsvp-intro{font-family:var(--font-cormorant),serif;font-size:18px;color:var(--muted);margin:0 0 22px}
 .rsvp-note{margin:-12px 0 16px;text-align:center;color:var(--muted);font-size:10px}
-.rsvp-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 16px}
+.rsvp-form{display:grid;grid-template-columns:minmax(0,1fr);gap:13px 16px}
 .rsvp-form label{display:grid;gap:6px;color:var(--ink);font-size:10px;letter-spacing:.08em}
 .rsvp-question{display:grid;gap:6px;min-width:0;margin:0;padding:0;border:0}
 .rsvp-question legend{padding:0 0 6px;color:var(--ink);font-size:10px;letter-spacing:.08em}
 .rsvp-response,.rsvp-name,.rsvp-guest-count{grid-column:1/-1}
 .rsvp-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.rsvp-option{min-height:40px;padding:8px 10px;border:1px solid var(--line);border-radius:2px;background:var(--white);color:var(--ink);font:11px var(--font-manrope),sans-serif;cursor:pointer}
+.rsvp-option{min-height:40px;padding:8px 10px;border:1px solid var(--line);border-radius:16px;background:var(--white);color:var(--ink);font:11px var(--font-manrope),sans-serif;cursor:pointer}
 .rsvp-option.is-selected{border-color:var(--ink);background:var(--ink);color:var(--white)}
 .rsvp-option:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .rsvp-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:100%;min-height:40px;padding:9px 11px;border:1px solid var(--line);border-radius:2px;background:var(--white);color:var(--ink);font:14px var(--font-manrope),sans-serif;letter-spacing:0}
 .rsvp-form textarea{min-height:58px;resize:vertical}
 .rsvp-notes{grid-column:1/-1}
-.rsvp-submit{grid-column:1/-1;justify-self:center;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:0 22px;border:1px solid var(--gold);background:var(--ink);color:var(--white);font-size:10px;letter-spacing:.1em;cursor:pointer}
+.rsvp-submit{grid-column:1/-1;justify-self:center;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:0 22px;border:1px solid var(--gold);border-radius:16px;background:var(--ink);color:var(--white);font-size:10px;letter-spacing:.1em;cursor:pointer}
 .rsvp-status{grid-column:1/-1;margin:0;text-align:center;color:var(--muted);font-size:11px;line-height:1.5}
 @media(max-width:650px){.rsvp-section{padding-block:34px}.rsvp-form{gap:10px 12px}.rsvp-form input,.rsvp-form select{min-height:38px}.rsvp-intro{font-size:16px;margin-bottom:16px}}
 

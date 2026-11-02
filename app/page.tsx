@@ -148,16 +148,24 @@ export default function Home() {
 
     <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br/>one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt}/><figcaption>Love, in a moment</figcaption></motion.figure>)}</div><p className="gallery-placeholder-note">Sample images shown — replace these with your pre-wedding photographs.</p></section>
 
-    <section className="closing-section"><FloralMark className="closing-flower"/><p className="eyebrow">With all our love</p><h2>We saved you <em>a place</em><br/>in our happiest day.</h2><p>Having you with us would mean the world.</p>
+    <section className="closing-section"><FloralMark className="closing-flower"/>
+    <p className="eyebrow">With all our love</p>
+    <h2>We saved you <em>a place</em><br/>in our happiest day.</h2>
+    <p>Having you with us would mean the world.</p>
     
-    <div className="closing-monogram">A <span>&</span> S</div><p className="closing-names">ASHANI & SHASHITHA</p><p className="closing-date">04 · 12 · 2026 &nbsp; | &nbsp; SAFFRON, WADDUWA</p><a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a></section>
-
+     {/*
+    <div className="closing-monogram">A <span>&</span> S</div>
+    <p className="closing-names">ASHANI & SHASHITHA</p>
+    <p className="closing-date">04 · 12 · 2026 &nbsp; | &nbsp; SAFFRON, WADDUWA</p>
+    <a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a></section>
+      */}
+    
     <section className="rsvp-section section-pad" id="rsvp">
       <div className="rsvp-inner">
         <p className="eyebrow">Kindly reply</p>
         <h2>Will you join <em>us?</em></h2>
         <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
-        <p className="rsvp-note">Your reply will be shared privately with the couple.</p>
+      {/*  <p className="rsvp-note">Your reply will be shared privately with the couple.</p> */}
         <form className="rsvp-form" onSubmit={async event => {
           event.preventDefault();
           const form = event.currentTarget;
