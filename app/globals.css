@@ -32,6 +32,7 @@
 .rsvp-note{margin:-12px 0 16px;text-align:center;color:var(--muted);font-size:10px}
 .rsvp-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 16px}
 .rsvp-form label{display:grid;gap:6px;color:var(--ink);font-size:10px;letter-spacing:.08em}
+.rsvp-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:100%;min-height:40px;padding:9px 11px;border:1px solid var(--line);border-radius:2px;background:var(--white);color:var(--ink);font:14px var(--font-manrope),sans-serif;letter-spacing:0}
 .rsvp-form textarea{min-height:58px;resize:vertical}
 .rsvp-notes{grid-column:1/-1}

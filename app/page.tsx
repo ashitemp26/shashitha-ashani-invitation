@@ -18,7 +18,8 @@ export default function Home() {
   const [opened, setOpened] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [musicOn, setMusicOn] = useState(false);
-  const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
+  const [rsvpStatus, setRsvpStatus] = useState('');
+  const [rsvpSending, setRsvpSending] = useState(false);
   useEffect(() => {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
@@ -153,15 +154,44 @@ export default function Home() {
         <p className="eyebrow">Kindly reply</p>
         <h2>Will you join <em>us?</em></h2>
         <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
-        <p className="rsvp-note">RSVP collection is not connected in this preview.</p>
-        <form className="rsvp-form" onSubmit={event => { event.preventDefault(); setRsvpSubmitted(true); }}>
+        <p className="rsvp-note">Your reply will be shared privately with the couple.</p>
+        <form className="rsvp-form" onSubmit={async event => {
+          event.preventDefault();
+          const form = event.currentTarget;
+          const formData = new FormData(form);
+          setRsvpSending(true);
+          setRsvpStatus('');
+          try {
+            const response = await fetch('/api/rsvp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                name: formData.get('name'),
+                email: formData.get('email'),
+                attendance: formData.get('attendance'),
+                guests: Number(formData.get('guests')),
+                notes: formData.get('notes'),
+                website: formData.get('website'),
+              }),
+            });
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || 'We could not save your RSVP. Please try again.');
+            setRsvpStatus('Thank you. Your RSVP has been received.');
+            form.reset();
+          } catch (error) {
+            setRsvpStatus(error instanceof Error ? error.message : 'We could not save your RSVP. Please try again.');
+          } finally {
+            setRsvpSending(false);
+          }
+        }}>
+          <div className="rsvp-honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
           <label>Your name<input name="name" autoComplete="name" required /></label>
           <label>Email address<input name="email" type="email" autoComplete="email" required /></label>
           <label>Will you attend?<select name="attendance" defaultValue="" required><option value="" disabled>Select a response</option><option value="yes">Joyfully accepts</option><option value="no">Regretfully declines</option></select></label>
           <label>Number of guests<select name="guests" defaultValue="1"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></label>
           <label className="rsvp-notes">Dietary requirements or a note<textarea name="notes" rows={2} /></label>
-          <button type="submit" className="rsvp-submit">Send RSVP <ArrowUpRight size={15}/></button>
-          {rsvpSubmitted && <p className="rsvp-status" role="status">This preview doesn’t send or store RSVPs yet. Please contact the couple directly.</p>}
+          <button type="submit" className="rsvp-submit" disabled={rsvpSending}>{rsvpSending ? 'Sending…' : 'Send RSVP'} <ArrowUpRight size={15}/></button>
+          {rsvpStatus && <p className="rsvp-status" role="status">{rsvpStatus}</p>}
         </form>
       </div>
     </section>
