@@ -31,7 +31,7 @@ export async function POST(request: Request) {
   if (
     !name || name.length > 120 ||
     (attendance !== 'yes' && attendance !== 'no') ||
-    (attendance === 'yes' && (!Number.isInteger(guestCount) || guestCount < 1 || guestCount > 4)) ||
+    (attendance === 'yes' && (!Number.isInteger(guestCount) || guestCount < 1 || guestCount > 2)) ||
     (attendance === 'yes' &&
       ((team !== 'bride' && team !== 'groom') ||
         (relationship !== 'relative' && relationship !== 'friend')))
