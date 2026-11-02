@@ -18,6 +18,7 @@ export default function Home() {
   const [opened, setOpened] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [musicOn, setMusicOn] = useState(false);
+  const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   useEffect(() => {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
@@ -130,16 +131,41 @@ export default function Home() {
     </motion.section>
 
     <section className="story-section section-pad" id="story"><div className="story-heading"><p className="eyebrow">A story written in the stars</p><h2>Every love story is beautiful.<br/><em>Ours is our favourite.</em></h2><p className="section-description">Somewhere between ordinary days and unexpected moments, we found something extraordinary — each other.</p></div>
-      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt}/><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower"/><span className="story-number">01 — OUR JOURNEY</span><h3>Two hearts.<br/><em>One beautiful journey.</em></h3><p>From the first hello to all the little moments that became our favourite memories, every step has led us here. And now, we cannot wait to celebrate the next chapter with the people who mean the most to us.</p><div className="heart-line"><span/><Heart size={14}/><span/></div><p className="script-note">See you at the beginning of our forever.</p></div></div>
+      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt}/><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower"/><span className="story-number">OUR JOURNEY</span><h3>Two hearts.<br/><em>One beautiful journey.</em></h3><p>From the first hello to all the little moments that became our favourite memories, every step has led us here. And now, we cannot wait to celebrate the next chapter with the people who mean the most to us.</p><div className="heart-line"><span/><Heart size={14}/><span/></div><p className="script-note">See you at the beginning of our forever.</p></div></div>
     </section>
 
     <section className="countdown-section"><div className="countdown-overlay"/><div className="countdown-content"><Sparkles size={18} strokeWidth={1}/><p className="eyebrow">The countdown to forever</p><h2>Until we say <em>“I do”</em></h2><div className="countdown-grid">{Object.entries(timeLeft).map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}</div><p className="countdown-note">We can’t wait to celebrate with you.</p></div></section>
 
-    <section className="details-section section-pad" id="details"><div className="details-heading"><p className="eyebrow">The day we’ve been dreaming of</p><h2>Join us for <em>the celebration</em></h2><p className="section-description">A little gathering, a lot of love, and memories we’ll carry forever.</p></div><div className="details-cards"><article className="detail-card"><div className="detail-icon"><CalendarDays size={21}/></div><p className="eyebrow">When</p><h3>Friday, 4 December</h3><p>Two thousand and twenty-six</p><div className="detail-rule"/><p className="detail-small">Ceremony & celebration</p><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shashitha%20%26%20Ashani%20Wedding&dates=20261204T113000Z/20261204T160000Z&details=Wedding%20celebration%20of%20Shashitha%20and%20Ashani&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link">Save the date <ArrowUpRight size={14}/></a></article><article className="detail-card"><div className="detail-icon"><MapPin size={21}/></div><p className="eyebrow">Where</p><h3>Saffron</h3><p>Wadduwa, Sri Lanka</p><div className="detail-rule"/><p className="detail-small">Our place for the evening</p><a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link">Get directions <ArrowUpRight size={14}/></a></article></div><p className="details-footnote">Exact ceremony and reception times will be shared with your invitation.</p></section>
+    <section className="details-section section-pad" id="details">
+      <div className="details-heading"><p className="eyebrow">The day we’ve been dreaming of</p>
+      <h2>Join us for <em>the celebration</em></h2>
+      <p className="section-description">A little gathering, a lot of love, and memories we’ll carry forever.</p></div>
+      <div className="details-cards"><article className="detail-card"><div className="detail-icon"><CalendarDays size={21}/></div><p className="eyebrow">When</p><h3>Friday, 4 December</h3><p>Two thousand and twenty-six</p><div className="detail-rule"/><p className="detail-small">Ceremony & celebration</p><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shashitha%20%26%20Ashani%20Wedding&dates=20261204T113000Z/20261204T160000Z&details=Wedding%20celebration%20of%20Shashitha%20and%20Ashani&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link">Save the date <ArrowUpRight size={14}/></a></article><article className="detail-card"><div className="detail-icon"><MapPin size={21}/></div><p className="eyebrow">Where</p><h3>Saffron</h3><p>Wadduwa, Sri Lanka</p><div className="detail-rule"/><p className="detail-small">Our place for the evening</p><a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link">Get directions <ArrowUpRight size={14}/></a></article></div><p className="details-footnote">Exact ceremony and reception times will be shared with your invitation.</p></section>
 
     <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br/>one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt}/><figcaption>Love, in a moment</figcaption></motion.figure>)}</div><p className="gallery-placeholder-note">Sample images shown — replace these with your pre-wedding photographs.</p></section>
 
-    <section className="closing-section"><FloralMark className="closing-flower"/><p className="eyebrow">With all our love</p><h2>We saved you <em>a place</em><br/>in our happiest day.</h2><p>Having you with us would mean the world.</p><div className="closing-monogram">S <span>&</span> A</div><p className="closing-names">SHASHITHA & ASHANI</p><p className="closing-date">04 · 12 · 2026 &nbsp; | &nbsp; SAFFRON, WADDUWA</p><a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a></section>
-    <footer className="site-footer"><span>Made with love, for our favourite people.</span><span>© S & A · 2026</span></footer>
+    <section className="closing-section"><FloralMark className="closing-flower"/><p className="eyebrow">With all our love</p><h2>We saved you <em>a place</em><br/>in our happiest day.</h2><p>Having you with us would mean the world.</p>
+    
+    <div className="closing-monogram">A <span>&</span> S</div><p className="closing-names">ASHANI & SHASHITHA</p><p className="closing-date">04 · 12 · 2026 &nbsp; | &nbsp; SAFFRON, WADDUWA</p><a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a></section>
+
+    <section className="rsvp-section section-pad" id="rsvp">
+      <div className="rsvp-inner">
+        <p className="eyebrow">Kindly reply</p>
+        <h2>Will you join <em>us?</em></h2>
+        <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
+        <p className="rsvp-note">RSVP collection is not connected in this preview.</p>
+        <form className="rsvp-form" onSubmit={event => { event.preventDefault(); setRsvpSubmitted(true); }}>
+          <label>Your name<input name="name" autoComplete="name" required /></label>
+          <label>Email address<input name="email" type="email" autoComplete="email" required /></label>
+          <label>Will you attend?<select name="attendance" defaultValue="" required><option value="" disabled>Select a response</option><option value="yes">Joyfully accepts</option><option value="no">Regretfully declines</option></select></label>
+          <label>Number of guests<select name="guests" defaultValue="1"><option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></label>
+          <label className="rsvp-notes">Dietary requirements or a note<textarea name="notes" rows={2} /></label>
+          <button type="submit" className="rsvp-submit">Send RSVP <ArrowUpRight size={15}/></button>
+          {rsvpSubmitted && <p className="rsvp-status" role="status">This preview doesn’t send or store RSVPs yet. Please contact the couple directly.</p>}
+        </form>
+      </div>
+    </section>
+
+    <footer className="site-footer"><span>Made with love, for our favourite people.</span><span>© A & S · 2026</span></footer>
   </main>;
 }
