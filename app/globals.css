@@ -23,10 +23,10 @@
 .invitation-section .venue-name{margin:0 0 3px}
 .invitation-section .venue-note{margin:0}
 
-.details-cards .detail-card{min-height:140px;display:flex;align-items:center;justify-content:center}
-.details-cards .detail-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:1px solid var(--line);border-radius:16px;background:var(--ink);color:var(--white);text-decoration:none}
-.details-cards .detail-action:hover{background:#3b4a42}
-.details-cards .detail-action:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.details-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.details-actions .detail-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:1px solid var(--line);border-radius:16px;background:var(--ink);color:var(--white);text-decoration:none}
+.details-actions .detail-action:hover{background:#3b4a42}
+.details-actions .detail-action:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
 .rsvp-section{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-block:clamp(24px,5vh,52px);background:var(--paper)}
 .rsvp-inner{width:min(100%,620px);margin:0 auto}
@@ -51,4 +51,6 @@
 .rsvp-submit{grid-column:1/-1;justify-self:center;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:0 22px;border:1px solid var(--gold);border-radius:16px;background:var(--ink);color:var(--white);font-size:10px;letter-spacing:.1em;cursor:pointer}
 .rsvp-status{grid-column:1/-1;margin:0;text-align:center;color:var(--muted);font-size:11px;line-height:1.5}
 @media(max-width:650px){.rsvp-section{padding-block:34px}.rsvp-form{gap:10px 12px}.rsvp-form input,.rsvp-form select{min-height:38px}.rsvp-intro{font-size:16px;margin-bottom:16px}}
+
+@media(max-width:650px){.details-actions{gap:8px}.details-actions .detail-action{gap:4px;padding:0 12px;font-size:9px;white-space:nowrap}}
 
