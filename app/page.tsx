@@ -49,12 +49,6 @@ export default function Home() {
             muted
             playsInline
             preload="auto"
-            onTimeUpdate={event => {
-              const video = event.currentTarget;
-              if (Number.isFinite(video.duration) && video.duration - video.currentTime <= 7) {
-                setSaveDateVisible(false);
-              }
-            }}
             onEnded={reveal}
             onError={() => {
               console.error('The Save the Date video could not be loaded.');
@@ -80,6 +74,12 @@ export default function Home() {
             muted
             playsInline
             preload="auto"
+            onTimeUpdate={event => {
+              const video = event.currentTarget;
+              if (Number.isFinite(video.duration) && video.duration > 0 && video.currentTime >= video.duration / 2) {
+                setSaveDateVisible(false);
+              }
+            }}
             onEnded={reveal}
             onError={() => {
               console.error('The Save the Date video could not be loaded.');
@@ -91,7 +91,7 @@ export default function Home() {
           <motion.div
             className="pointer-events-none absolute inset-0"
             animate={{ opacity: saveDateVisible ? 1 : 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 1, ease: 'easeOut' }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
 
