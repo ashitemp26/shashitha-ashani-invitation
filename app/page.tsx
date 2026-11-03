@@ -169,10 +169,7 @@ export default function Home() {
     <section className="closing-section"><FloralMark className="closing-flower"/>
     <p className="eyebrow">With all our love</p>
     <h2>We saved you <em>a place</em><br/>in our happiest day.</h2>
-    <p>Having you with us would mean the world.</p>
-    <p className="closing-names">ASHANI & SHASHITHA</p>
-    <p className="closing-date">04 · 12 · 2026 &nbsp; | &nbsp; SAFFRON, WADDUWA</p>
-    <a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a></section>
+    <p>Having you with us would mean the world.</p></section>
       
     
     <section className="rsvp-section section-pad" id="rsvp">
@@ -259,6 +256,8 @@ export default function Home() {
         </form>
       </div>
     </section>
+
+    <a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a>
 
     <footer className="site-footer"><span>Made with love, for our favourite people.</span><span>© A & S · 2026</span></footer>
   </main>;
