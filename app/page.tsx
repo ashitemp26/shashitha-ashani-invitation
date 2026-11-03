@@ -24,6 +24,7 @@ export default function Home() {
   const [rsvpTeam, setRsvpTeam] = useState<'bride' | 'groom' | ''>('');
   const [rsvpRelationship, setRsvpRelationship] = useState<'relative' | 'friend' | ''>('');
   const [rsvpGuests, setRsvpGuests] = useState<'1' | '2' | ''>('');
+  const [saveDateVisible, setSaveDateVisible] = useState(true);
   useEffect(() => {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
@@ -48,6 +49,12 @@ export default function Home() {
             muted
             playsInline
             preload="auto"
+            onTimeUpdate={event => {
+              const video = event.currentTarget;
+              if (Number.isFinite(video.duration) && video.duration - video.currentTime <= 7) {
+                setSaveDateVisible(false);
+              }
+            }}
             onEnded={reveal}
             onError={() => {
               console.error('The Save the Date video could not be loaded.');
@@ -81,23 +88,29 @@ export default function Home() {
 
         
 
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
+          <motion.div
+            className="pointer-events-none absolute inset-0"
+            animate={{ opacity: saveDateVisible ? 1 : 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
-            <p className="mb-3 text-[10px] uppercase tracking-[0.38em] text-[#f3dfb6] sm:text-xs">
-              Save the Date
-            </p>
+            <div className="absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
+              <p className="mb-3 text-[10px] uppercase tracking-[0.38em] text-[#f3dfb6] sm:text-xs">
+                Save the Date
+              </p>
 
-            <h1 className="text-4xl font-normal sm:text-6xl">
-              Shashitha <span className="italic text-[#ead4a7]">&</span> Ashani
-            </h1>
+              <h1 className="text-4xl font-normal sm:text-6xl">
+                Shashitha <span className="italic text-[#ead4a7]">&</span> Ashani
+              </h1>
 
-            <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
+              <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
 
-            <p className="mt-4 text-xs tracking-[0.2em] text-white/90 sm:text-sm">
-              04 · 12 · 2026
-            </p>
-          </div>
+              <p className="mt-4 text-xs tracking-[0.2em] text-white/90 sm:text-sm">
+                04 · 12 · 2026
+              </p>
+            </div>
+          </motion.div>
 
           <div className="pointer-events-none absolute inset-0 border-[10px] border-[#f5ead5]/25 sm:border-[18px]" />
 
