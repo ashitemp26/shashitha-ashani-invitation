@@ -96,19 +96,11 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
 
             <div className="absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
-              <p className="mb-3 text-[10px] uppercase tracking-[0.38em] text-[#f3dfb6] sm:text-xs">
-                Save the Date
-              </p>
-
               <h1 className="save-date-names text-4xl font-normal sm:text-6xl">
                 Ashani <span className="italic text-[#ead4a7]">&</span> Shashitha
               </h1>
 
               <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
-
-              <p className="mt-4 text-xs tracking-[0.2em] text-white/90 sm:text-sm">
-                04 · 12 · 2026
-              </p>
             </div>
           </motion.div>
 
