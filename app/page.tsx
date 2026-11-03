@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, Sparkles } from 'lucide-react';
 
-const weddingDate = new Date('2026-12-04T17:00:00+05:30').getTime();
+const weddingDate = new Date('2026-12-04T19:00:00+05:30').getTime();
 const saveTheDateVideo = 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/IMG_1665.MOV';
 const photos = [
   { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85', alt: 'Romantic wedding details' },
   { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85', alt: 'A celebration of love' },
-  { src: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1000&q=85', alt: 'Wedding couple holding hands' },
+  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4575.jpg.jpeg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkzNzQ1NjI5ODM4LCJpYXQiOjE3OTM3MDI0MzAwMzN9.S1PEZ_C3MgxJkiLCKfcjrewSXbJCPBo2ncKh4mYpVrw&vercel-blob-signature=Cx9KSaCrSZdMFLcBMqfSYXOD2djCj9Sur0dO-1tNL8k', alt: 'Wedding couple holding hands' },
 ];
 
 function FloralMark({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 106C60 79 58 48 60 14M60 74C42 72 31 59 30 42C48 43 60 55 60 74ZM60 88C77 85 91 70 91 53C74 55 61 69 60 88Z" stroke="currentColor" strokeWidth="1.1"/><path d="M60 39C45 28 49 14 60 8C71 14 75 28 60 39ZM60 39C43 40 34 29 39 17C52 18 59 26 60 39ZM60 39C77 40 86 29 81 17C68 18 61 26 60 39Z" stroke="currentColor" strokeWidth="1.1"/></svg> }
@@ -149,10 +149,10 @@ export default function Home() {
     </motion.section>
 
     <section className="story-section section-pad" id="story"><div className="story-heading"><p className="eyebrow">SOME STORIES ARE WRITTEN BY DESTINY</p><h2>We were closer than we knew.<br/><em>Until life brought us together.</em></h2><p className="section-description">We were once part of the same little world, yet complete strangers to each other,never imagining that life would bring us together years later.</p></div>
-      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt}/><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower"/><span className="story-number">A LITTLE BIT OF DESTINY</span><h3>Different paths.<br/><em>One beautiful destination.</em></h3><p>One starry night brought two strangers together, and a thousand conversations made them each other's favourite person. Perhaps life was simply waiting for the right moment to bring us together</p><div className="heart-line"><span/><Heart size={14}/><span/></div></div></div>
+      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt}/><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower"/><span className="story-number">A LITTLE BIT OF DESTINY</span><h3>Different paths.<br/><em>One beautiful destination.</em></h3><p>One starry night brought two strangers together, and a thousand conversations made them each other's favourite person. Perhaps life was simply waiting for the right moment to bring us together.</p><div className="heart-line"><span/><Heart size={14}/><span/></div></div></div>
     </section>
 
-    <section className="countdown-section"><div className="countdown-overlay"/><div className="countdown-content"><Sparkles size={18} strokeWidth={1}/><p className="eyebrow">The countdown to forever</p><h2>Until we say <em>“I do”</em></h2><div className="countdown-grid">{Object.entries(timeLeft).map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}</div><p className="countdown-note">We can’t wait to celebrate with you.</p></div></section>
+    <section className="countdown-section"><div className="countdown-overlay"/><div className="countdown-content"><Sparkles size={18} strokeWidth={1}/><p className="eyebrow">The countdown to our day</p><h2>Until we say <em>“I do”</em></h2><div className="countdown-grid">{Object.entries(timeLeft).map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}</div><p className="countdown-note">We can’t wait to celebrate with you.</p></div></section>
 
     <section className="details-section section-pad" id="details">
       <div className="details-heading"><p className="eyebrow">The day we’ve been dreaming of</p>
