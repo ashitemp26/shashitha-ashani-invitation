@@ -42,13 +42,11 @@ export async function POST(request: Request) {
   try {
     const sql = neon(databaseUrl);
     await sql`
-      INSERT INTO rsvps (name, email, attendance, guest_count, notes, team, relationship)
+      INSERT INTO rsvps (name, attendance, guest_count, team, relationship)
       VALUES (
         ${name},
-        NULL,
         ${attendance === 'yes'},
         ${guestCount},
-        '',
         ${attendance === 'yes' ? team : null},
         ${attendance === 'yes' ? relationship : null}
       )
