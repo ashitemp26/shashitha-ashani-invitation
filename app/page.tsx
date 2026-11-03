@@ -22,7 +22,7 @@ export default function Home() {
   const [rsvpSending, setRsvpSending] = useState(false);
   const [attendance, setAttendance] = useState<'yes' | 'no' | ''>('');
   const [rsvpTeam, setRsvpTeam] = useState<'bride' | 'groom' | ''>('');
-  const [rsvpRelationship, setRsvpRelationship] = useState<'relative' | 'friend' | ''>('');
+  const [rsvpRelationship, setRsvpRelationship] = useState<'office' | 'friend' | ''>('');
   const [rsvpGuests, setRsvpGuests] = useState<'1' | '2' | ''>('');
   const [saveDateVisible, setSaveDateVisible] = useState(true);
   useEffect(() => {
@@ -244,7 +244,7 @@ export default function Home() {
             <fieldset className="rsvp-question">
               <legend>Q2: How do you know the couple?</legend>
               <div className="rsvp-options">
-                <button type="button" className={`rsvp-option${rsvpRelationship === 'relative' ? ' is-selected' : ''}`} aria-pressed={rsvpRelationship === 'relative'} onClick={() => { setRsvpRelationship('relative'); setRsvpStatus(''); }}>Relative</button>
+                <button type="button" className={`rsvp-option${rsvpRelationship === 'office' ? ' is-selected' : ''}`} aria-pressed={rsvpRelationship === 'office'} onClick={() => { setRsvpRelationship('office'); setRsvpStatus(''); }}>Office</button>
                 <button type="button" className={`rsvp-option${rsvpRelationship === 'friend' ? ' is-selected' : ''}`} aria-pressed={rsvpRelationship === 'friend'} onClick={() => { setRsvpRelationship('friend'); setRsvpStatus(''); }}>Friend</button>
               </div>
             </fieldset>

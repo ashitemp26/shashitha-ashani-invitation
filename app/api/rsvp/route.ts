@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     (attendance === 'yes' && (!Number.isInteger(guestCount) || guestCount < 1 || guestCount > 2)) ||
     (attendance === 'yes' &&
       ((team !== 'bride' && team !== 'groom') ||
-        (relationship !== 'relative' && relationship !== 'friend')))
+        (relationship !== 'office' && relationship !== 'friend')))
   ) {
     return NextResponse.json({ error: 'Please check your details and try again.' }, { status: 400 });
   }
