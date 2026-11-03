@@ -23,6 +23,11 @@
 .invitation-section .venue-name{margin:0 0 3px}
 .invitation-section .venue-note{margin:0}
 
+.details-cards .detail-card{min-height:140px;display:flex;align-items:center;justify-content:center}
+.details-cards .detail-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:1px solid var(--line);border-radius:16px;background:var(--ink);color:var(--white);text-decoration:none}
+.details-cards .detail-action:hover{background:#3b4a42}
+.details-cards .detail-action:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
 .rsvp-section{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-block:clamp(24px,5vh,52px);background:var(--paper)}
 .rsvp-inner{width:min(100%,620px);margin:0 auto}
 .rsvp-inner>.eyebrow,.rsvp-inner>h2,.rsvp-intro{text-align:center}

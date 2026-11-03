@@ -101,7 +101,7 @@ export default function Home() {
               </p>
 
               <h1 className="text-4xl font-normal sm:text-6xl">
-                Shashitha <span className="italic text-[#ead4a7]">&</span> Ashani
+                Ashani <span className="italic text-[#ead4a7]">&</span> Shashitha
               </h1>
 
               <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
@@ -120,7 +120,7 @@ export default function Home() {
             className="absolute bottom-5 right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white"
             onClick={reveal}
           >
-            Skip video
+            Skip
           </button>
         </motion.div>
       )}
@@ -158,9 +158,17 @@ export default function Home() {
       <div className="details-heading"><p className="eyebrow">The day we’ve been dreaming of</p>
       <h2>Join us for <em>the celebration</em></h2>
       <p className="section-description">A little gathering, a lot of love, and memories we’ll carry forever.</p></div>
-      <div className="details-cards"><article className="detail-card"><div className="detail-icon"><CalendarDays size={21}/></div><p className="eyebrow">When</p><h3>Friday, 4 December</h3><p>Two thousand and twenty-six</p><div className="detail-rule"/><p className="detail-small">Ceremony & celebration</p><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shashitha%20%26%20Ashani%20Wedding&dates=20261204T113000Z/20261204T160000Z&details=Wedding%20celebration%20of%20Shashitha%20and%20Ashani&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link">Save the date <ArrowUpRight size={14}/></a></article><article className="detail-card"><div className="detail-icon"><MapPin size={21}/></div><p className="eyebrow">Where</p><h3>Saffron</h3><p>Wadduwa, Sri Lanka</p><div className="detail-rule"/><p className="detail-small">Our place for the evening</p><a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link">Get directions <ArrowUpRight size={14}/></a></article></div><p className="details-footnote">Exact ceremony and reception times will be shared with your invitation.</p></section>
+      <div className="details-cards">
+        <article className="detail-card">
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shashitha%20%26%20Ashani%20Wedding&dates=20261204T113000Z/20261204T160000Z&details=Wedding%20celebration%20of%20Shashitha%20and%20Ashani&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link detail-action">Save the date <ArrowUpRight size={14}/></a>
+        </article>
+        <article className="detail-card">
+          <a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link detail-action">Get directions <ArrowUpRight size={14}/></a>
+        </article>
+      </div>
+    </section>
 
-    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br/>one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt}/><figcaption>Love, in a moment</figcaption></motion.figure>)}</div><p className="gallery-placeholder-note">Sample images shown — replace these with your pre-wedding photographs.</p></section>
+    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br/>one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt}/><figcaption>Love, in a moment</figcaption></motion.figure>)}</div></section>
 
     <section className="closing-section"><FloralMark className="closing-flower"/>
     <p className="eyebrow">With all our love</p>
