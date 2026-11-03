@@ -154,6 +154,10 @@ export default function Home() {
 
     <section className="countdown-section"><div className="countdown-overlay"/><div className="countdown-content"><Sparkles size={18} strokeWidth={1}/><p className="eyebrow">The countdown to our day</p><h2>Until we say <em>“I do”</em></h2><div className="countdown-grid">{Object.entries(timeLeft).map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}</div><p className="countdown-note">We can’t wait to celebrate with you.</p></div></section>
 
+    
+
+    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br/>one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt}/><figcaption>Love, in a moment</figcaption></motion.figure>)}</div></section>
+
     <section className="details-section section-pad" id="details">
       <div className="details-heading"><p className="eyebrow">The day we’ve been dreaming of</p>
       <h2>Join us for <em>the celebration</em></h2>
@@ -163,8 +167,6 @@ export default function Home() {
         <a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link detail-action" style={{ position: 'relative', display: 'flex', width: '100%', minWidth: 0, alignItems: 'center', justifyContent: 'center', padding: '0 32px 0 12px', textAlign: 'center' }}>Get directions <ArrowUpRight size={14} style={{ position: 'absolute', right: 12, flexShrink: 0 }}/></a>
       </div>
     </section>
-
-    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br/>one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt}/><figcaption>Love, in a moment</figcaption></motion.figure>)}</div></section>
 
     <section className="closing-section"><FloralMark className="closing-flower"/>
     <p className="eyebrow">With all our love</p>
