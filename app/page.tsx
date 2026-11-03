@@ -144,7 +144,7 @@ export default function Home() {
         <p className="invite-join">would be delighted by your presence</p><p className="invite-join">at the celebration of their marriage</p>
         <div className="date-lockup"><span className="date-day">FRIDAY</span><span className="date-number">04</span><span className="date-month">DECEMBER</span></div>
         <p className="event-time">From 7 PM onwards</p>
-        <p className="venue-name">Saffron, Wadduwa</p><p className="venue-note">As the sun sets, a new forever begins.</p>
+        <p className="venue-name">Saffron, Wadduwa</p><br/><p className="venue-note">As the sun sets, a new forever begins.</p>
       </motion.div>
     </motion.section>
 
