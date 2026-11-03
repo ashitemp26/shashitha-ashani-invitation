@@ -148,8 +148,8 @@ export default function Home() {
       </motion.div>
     </motion.section>
 
-    <section className="story-section section-pad" id="story"><div className="story-heading"><p className="eyebrow">A story written in the stars</p><h2>Every love story is beautiful.<br/><em>Ours is our favourite.</em></h2><p className="section-description">Somewhere between ordinary days and unexpected moments, we found something extraordinary — each other.</p></div>
-      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt}/><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower"/><span className="story-number">OUR JOURNEY</span><h3>Two hearts.<br/><em>One beautiful journey.</em></h3><p>From the first hello to all the little moments that became our favourite memories, every step has led us here. And now, we cannot wait to celebrate the next chapter with the people who mean the most to us.</p><div className="heart-line"><span/><Heart size={14}/><span/></div></div></div>
+    <section className="story-section section-pad" id="story"><div className="story-heading"><p className="eyebrow">SOME STORIES ARE WRITTEN BY DESTINY</p><h2>We were closer than we knew.<br/><em>Until life brought us together.</em></h2><p className="section-description">We were once part of the same little world, yet complete strangers to each other,never imagining that life would bring us together years later.</p></div>
+      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt}/><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower"/><span className="story-number">A LITTLE BIT OF DESTINY</span><h3>Different paths.<br/><em>One beautiful destination.</em></h3><p>One starry night brought two strangers together, and a thousand conversations made them each other's favourite person. Perhaps life was simply waiting for the right moment to bring us together</p><div className="heart-line"><span/><Heart size={14}/><span/></div></div></div>
     </section>
 
     <section className="countdown-section"><div className="countdown-overlay"/><div className="countdown-content"><Sparkles size={18} strokeWidth={1}/><p className="eyebrow">The countdown to forever</p><h2>Until we say <em>“I do”</em></h2><div className="countdown-grid">{Object.entries(timeLeft).map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}</div><p className="countdown-note">We can’t wait to celebrate with you.</p></div></section>
@@ -170,9 +170,6 @@ export default function Home() {
     <p className="eyebrow">With all our love</p>
     <h2>We saved you <em>a place</em><br/>in our happiest day.</h2>
     <p>Having you with us would mean the world.</p>
-    
-     
-    <div className="closing-monogram">A <span>&</span> S</div>
     <p className="closing-names">ASHANI & SHASHITHA</p>
     <p className="closing-date">04 · 12 · 2026 &nbsp; | &nbsp; SAFFRON, WADDUWA</p>
     <a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a></section>
