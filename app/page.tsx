@@ -159,7 +159,7 @@ export default function Home() {
       <h2>Join us for <em>the celebration</em></h2>
       <p className="section-description">A little gathering, a lot of love, and memories we’ll carry forever.</p></div>
       <div className="details-actions">
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shashitha%20%26%20Ashani%20Wedding&dates=20261204T113000Z/20261204T160000Z&details=Wedding%20celebration%20of%20Shashitha%20and%20Ashani&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link detail-action">Save the date <ArrowUpRight size={14}/></a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ashani%20%26%20Shashitha%27s%20Wedding&dates=20261204T133000Z/20261204T183000Z&details=Wedding%20celebration%20of%20Ashani%20and%20Shashitha&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link detail-action">Save the date <ArrowUpRight size={14}/></a>
         <a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link detail-action">Get directions <ArrowUpRight size={14}/></a>
       </div>
     </section>
