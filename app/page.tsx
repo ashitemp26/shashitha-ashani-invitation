@@ -96,6 +96,9 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
 
             <div className="absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
+              <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.4em] text-[#f7ebd6]/90 sm:text-xs">
+                Save the Date
+              </p>
               <h1 className="save-date-names text-4xl font-normal sm:text-6xl">
                 Ashani <span className="italic text-[#ead4a7]">&</span> Shashitha
               </h1>
