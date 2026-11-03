@@ -76,7 +76,7 @@ export default function Home() {
             preload="auto"
             onTimeUpdate={event => {
               const video = event.currentTarget;
-              if (Number.isFinite(video.duration) && video.duration > 0 && video.currentTime >= video.duration / 2) {
+              if (video.currentTime >= 18) {
                 setSaveDateVisible(false);
               }
             }}
