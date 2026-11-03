@@ -14,8 +14,8 @@
 
 .invitation-section.section-pad{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-block:clamp(24px,4vh,52px)}
 .invitation-section .section-flower{width:clamp(44px,9vh,82px);height:auto;margin:0 auto clamp(6px,1.3vh,12px)}
-.invitation-section .eyebrow{margin-bottom:clamp(8px,1.5vh,16px)}
-.invitation-section .invite-intro,.invitation-section .invite-join{margin:2px 0;line-height:1.45;font-family:var(--font-manrope),sans-serif;font-size:18px;color:#62685f;font-weight:500;letter-spacing:0}
+.invitation-section .eyebrow{margin-bottom:clamp(15px,1.5vh,16px)}
+.invitation-section .invite-intro,.invitation-section .invite-join{margin:2px 0;line-height:1.45;font-family:var(--font-manrope),sans-serif;font-size:15px;color:#62685f;font-weight:500;letter-spacing:0}
 .invitation-section .couple-names{font-size:clamp(50px,8vh,72px);line-height:.82;margin:clamp(8px,1.8vh,18px) 0}
 .invitation-section .couple-names i{font-size:clamp(32px,5vh,42px)}
 .invitation-section .date-lockup{margin:clamp(10px,2vh,20px) auto clamp(8px,1.5vh,16px)}
