@@ -142,7 +142,7 @@ export default function Home() {
         <p className="invite-intro">With hearts full of love and gratitude,</p><p className="invite-intro">we invite you to join us as we begin</p><p className="invite-intro">our most beautiful chapter yet.</p>
         <h1 className="couple-names"><span>Ashani</span><i>&</i><span>Shashitha</span></h1>
         <p className="invite-join">would be delighted by your presence</p><p className="invite-join">at the celebration of their marriage</p>
-        <div className="date-lockup"><span className="date-day">FRIDAY</span><span className="date-number">04</span><span className="date-month">DECEMBER <b>2026</b></span></div>
+        <div className="date-lockup"><span className="date-day">FRIDAY</span><span className="date-number">04</span><span className="date-month">DECEMBER</span></div>
         <p className="event-time">From 7 PM onwards</p>
         <p className="venue-name">Saffron, Wadduwa</p><p className="venue-note">As the sun sets, a new forever begins.</p>
       </motion.div>
