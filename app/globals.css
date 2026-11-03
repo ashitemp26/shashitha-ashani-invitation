@@ -7,8 +7,9 @@
 @media(max-width:650px){.opening{padding-top:9vh;min-height:100svh}.opening:before{inset:12px}.opening:after{inset:18px}.opening-content{margin-top:14px}.opening .eyebrow{font-size:8px}.envelope{margin-top:32px;height:160px;width:min(310px,78vw)}.opening-flower{width:125px;opacity:.75}.flower-left{left:-45px;bottom:10%}.flower-right{right:-45px;bottom:13%}.scroll-hint{font-size:7px;letter-spacing:.12em}.music-toggle{top:23px;right:23px;padding:8px}.music-toggle span{display:none}.section-pad{padding:78px 24px}.section-frame{inset:10px}.invite-intro{font-size:16px}.couple-names{font-size:68px;margin:25px 0}.date-lockup{gap:11px;margin:30px auto 23px}.date-number{font-size:50px;padding:0 13px}.date-day,.date-month{font-size:8px;letter-spacing:.12em}.story-heading{margin-bottom:40px}.story-heading h2,.details-heading h2,.gallery-heading h2{font-size:40px}.story-grid{grid-template-columns:1fr;gap:35px}.story-image-tall{height:410px;width:100%;max-width:none}.story-copy{padding:0 6px}.story-copy h3{font-size:39px}.countdown-section{min-height:370px;padding:70px 18px;background-position:center}.countdown-grid{gap:16px}.countdown-unit{min-width:48px}.countdown-unit span{font-size:7px}.countdown-content h2{font-size:39px}.details-cards{grid-template-columns:1fr;gap:14px}.detail-card{padding:32px 20px}.gallery-heading{display:block;margin-bottom:30px}.gallery-note{margin-top:13px}.gallery-grid{grid-template-columns:1fr 1fr;gap:12px}.gallery-photo{height:230px}.gallery-photo.photo-2{height:280px;grid-column:span 2;grid-row:1}.gallery-photo.photo-1,.gallery-photo.photo-3{height:210px}.gallery-photo figcaption{font-size:18px;bottom:14px}.closing-section{padding:80px 24px 60px}.closing-section h2{font-size:46px}.site-footer{padding:16px 18px;font-size:7px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-.couple-names{flex-direction:column;justify-content:center;align-items:center;gap:0;font-family:var(--font-italianno),cursive;font-size:72px;line-height:.86;white-space:nowrap;letter-spacing:0}
-.couple-names i{font-family:var(--font-italianno),cursive;font-size:42px;color:var(--gold);line-height:.9}
+.couple-names{flex-direction:column;justify-content:center;align-items:center;gap:0;font-family:var(--font-tangerine),cursive;font-size:72px;line-height:.86;white-space:nowrap;letter-spacing:0}
+.couple-names i{font-family:var(--font-tangerine),cursive;font-size:42px;color:var(--gold);line-height:.9}
+.save-date-names{font-family:var(--font-tangerine),cursive;font-size:clamp(48px,7vw,84px);line-height:1;letter-spacing:0.02em}
 @media(max-width:650px){.couple-names{font-size:54px;margin:25px 0}.couple-names i{font-size:34px}}
 
 .invitation-section.section-pad{min-height:100svh;display:flex;align-items:center;justify-content:center;padding-block:clamp(24px,4vh,52px)}
@@ -45,7 +46,7 @@
 .rsvp-option.is-selected{border-color:var(--ink);background:var(--ink);color:var(--white)}
 .rsvp-option:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .rsvp-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
-.rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:100%;min-height:40px;padding:9px 11px;border:1px solid var(--line);border-radius:2px;background:var(--white);color:var(--ink);font:14px var(--font-manrope),sans-serif;letter-spacing:0}
+.rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:100%;min-height:40px;padding:9px 11px;border:1px solid var(--line);border-radius:16px;background:var(--white);color:var(--ink);font:14px var(--font-manrope),sans-serif;letter-spacing:0}
 .rsvp-form textarea{min-height:58px;resize:vertical}
 .rsvp-notes{grid-column:1/-1}
 .rsvp-submit{grid-column:1/-1;justify-self:center;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:0 22px;border:1px solid var(--gold);border-radius:16px;background:var(--ink);color:var(--white);font-size:10px;letter-spacing:.1em;cursor:pointer}

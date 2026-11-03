@@ -76,7 +76,7 @@ export default function Home() {
             preload="auto"
             onTimeUpdate={event => {
               const video = event.currentTarget;
-              if (video.currentTime >= 17) {
+              if (video.currentTime >= 16) {
                 setSaveDateVisible(false);
               }
             }}
@@ -100,7 +100,7 @@ export default function Home() {
                 Save the Date
               </p>
 
-              <h1 className="text-4xl font-normal sm:text-6xl">
+              <h1 className="save-date-names text-4xl font-normal sm:text-6xl">
                 Ashani <span className="italic text-[#ead4a7]">&</span> Shashitha
               </h1>
 
