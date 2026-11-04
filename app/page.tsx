@@ -47,6 +47,72 @@ export default function Home() {
     });
     return () => observer.disconnect();
   }, []);
+  useEffect(() => {
+    if (!opened || window.innerWidth > 650 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const snapTargets = Array.from(document.querySelectorAll<HTMLElement>('.invitation-section, .story-section, .story-copy, .countdown-section, .gallery-section, .details-section, .rsvp-section'));
+    let animationFrame = 0;
+    let releaseTimer = 0;
+    let isAnimating = false;
+    let touchStartY: number | null = null;
+
+    const isEditableTarget = (target: EventTarget | null) => target instanceof Element && Boolean(target.closest('input, textarea, select, [contenteditable="true"]'));
+    const scrollToAdjacentSnap = (direction: number) => {
+      if (isAnimating) return false;
+      const currentY = window.scrollY;
+      const positions = snapTargets.map(target => target.getBoundingClientRect().top + currentY);
+      const currentIndex = positions.reduce((nearest, position, index) => Math.abs(position - currentY) < Math.abs(positions[nearest] - currentY) ? index : nearest, 0);
+      const targetY = positions[currentIndex + direction];
+      if (targetY === undefined) return false;
+
+      isAnimating = true;
+      const startY = currentY;
+      const distance = targetY - startY;
+      const startTime = performance.now();
+      const duration = 1200;
+      const animate = (time: number) => {
+        const progress = Math.min((time - startTime) / duration, 1);
+        const eased = progress < 0.5 ? 4 * progress ** 3 : 1 - ((-2 * progress + 2) ** 3) / 2;
+        window.scrollTo(0, startY + distance * eased);
+        if (progress < 1) {
+          animationFrame = window.requestAnimationFrame(animate);
+        } else {
+          animationFrame = 0;
+          window.scrollTo(0, targetY);
+          releaseTimer = window.setTimeout(() => { isAnimating = false; }, 180);
+        }
+      };
+      animationFrame = window.requestAnimationFrame(animate);
+      return true;
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!event.deltaY || event.ctrlKey || isEditableTarget(event.target)) return;
+      if (isAnimating || scrollToAdjacentSnap(Math.sign(event.deltaY))) event.preventDefault();
+    };
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY = isEditableTarget(event.target) ? null : event.touches[0]?.clientY ?? null;
+    };
+    const handleTouchMove = (event: TouchEvent) => {
+      if (touchStartY === null) return;
+      const delta = touchStartY - (event.touches[0]?.clientY ?? touchStartY);
+      if (Math.abs(delta) < 44) return;
+      if (isAnimating || scrollToAdjacentSnap(Math.sign(delta))) {
+        event.preventDefault();
+        touchStartY = null;
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.cancelAnimationFrame(animationFrame);
+      window.clearTimeout(releaseTimer);
+    };
+  }, [opened]);
   const reveal = () => { setOpened(true); window.setTimeout(() => document.getElementById('invitation')?.scrollIntoView({ behavior: 'smooth' }), 550); };
   return <main>
 
