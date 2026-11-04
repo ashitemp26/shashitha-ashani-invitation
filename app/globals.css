@@ -1372,7 +1372,7 @@ button {
     display: grid;
     gap: 6px;
     color: var(--ink);
-    font-size: 10px;
+    font-size: 18px;
     letter-spacing: .08em
 }
 
