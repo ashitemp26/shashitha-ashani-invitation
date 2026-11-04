@@ -461,7 +461,7 @@ button {
 }
 
 .story-heading h2 {
-    font-family: var(--font-moaro), cursive;
+    font-family: var(--font-cormorant), cursive;
     font-size: clamp(37px, 5vw, 57px);
     line-height: 1.06;
     font-weight: 400;
