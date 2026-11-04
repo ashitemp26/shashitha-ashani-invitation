@@ -27,7 +27,7 @@
 .invitation-section .date-day,.invitation-section .date-month{font-size:clamp(14px,2.0vh,14px)}
 .invitation-section .event-time{font-family:var(--font-cormorant),serif;font-size:clamp(17px,2.2vh,21px);line-height:1.2;color:var(--ink);margin:0 0 8px}
 .invitation-section .venue-name{margin:0 0 3px}
-.invitation-section .venue-note{margin:0;font-family:"Rouge Script", cursive;font-size:clamp(17px,2.2vh,21px)}
+.invitation-section .venue-note{margin:0;font-family:"Rouge Script", cursive;font-size:clamp(20px,2.4vh,24px)}
 
 .details-actions{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
 .details-actions .detail-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:1px solid var(--line);border-radius:16px;background:var(--ink);color:var(--white);text-decoration:none}
