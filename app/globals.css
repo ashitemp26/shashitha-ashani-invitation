@@ -558,7 +558,7 @@ button {
 }
 
 .story-number {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: .2em;
     color: var(--gold)
 }
@@ -864,9 +864,9 @@ button {
 }
 
 .closing-flower {
-    width: 70px;
+    width: 60px;
     color: var(--gold);
-    margin-bottom: 25px
+    margin-bottom: 28px
 }
 
 .closing-section h2 {
