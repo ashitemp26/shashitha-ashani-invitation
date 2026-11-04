@@ -572,7 +572,7 @@ button {
 }
 
 .story-copy>p:not(.script-note) {
-    font-size: 12px;
+    font-size: 18px;
     line-height: 2;
     color: var(--muted)
 }
@@ -903,10 +903,11 @@ button {
 }
 
 .back-top {
-    display: inline-flex;
+    display: flex;
+    width: max-content;
     align-items: center;
     gap: 7px;
-    margin-top: 30px;
+    margin: 30px auto 0;
     color: var(--ink);
     text-decoration: none;
     font-size: 9px;

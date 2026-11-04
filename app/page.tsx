@@ -174,8 +174,8 @@ export default function Home() {
       <div className="rsvp-inner">
         <p className="eyebrow">Kindly reply</p>
         <h2>Will you join <em>us?</em></h2>
-        <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
-        <p className="rsvp-note">Your reply will be shared privately with the couple.</p>
+        {/* <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
+        <p className="rsvp-note">Your reply will be shared privately with the couple.</p> */}
         <form className="rsvp-form" onSubmit={async event => {
           event.preventDefault();
           const form = event.currentTarget;
