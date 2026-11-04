@@ -1388,7 +1388,7 @@ button {
 .rsvp-question legend {
     padding: 0 0 6px;
     color: var(--ink);
-    font-size: 10px;
+    font-size: 18px;
     letter-spacing: .08em
 }
 
@@ -1411,7 +1411,7 @@ button {
     border-radius: 16px;
     background: var(--white);
     color: var(--ink);
-    font: 11px var(--font-cormorant), serif;
+    font: 18px var(--font-cormorant), serif;
     cursor: pointer
 }
 
@@ -1444,7 +1444,7 @@ button {
     border-radius: 16px;
     background: var(--white);
     color: var(--ink);
-    font: 14px var(--font-cormorant), serif;
+    font: 18px var(--font-cormorant), serif;
     letter-spacing: 0
 }
 
@@ -1471,7 +1471,7 @@ button {
     border-radius: 16px;
     background: var(--ink);
     color: var(--white);
-    font-size: 10px;
+    font-size: 18px;
     letter-spacing: .1em;
     cursor: pointer
 }
