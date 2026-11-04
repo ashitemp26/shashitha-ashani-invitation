@@ -30,6 +30,23 @@ export default function Home() {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
   }, []);
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>('.story-heading, .story-copy, .countdown-section, .gallery-heading, .details-section, .closing-section, .rsvp-section');
+    if (!('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+    elements.forEach(element => {
+      element.dataset.scrollFade = '';
+      observer.observe(element);
+    });
+    return () => observer.disconnect();
+  }, []);
   const reveal = () => { setOpened(true); window.setTimeout(() => document.getElementById('invitation')?.scrollIntoView({ behavior: 'smooth' }), 550); };
   return <main>
 
