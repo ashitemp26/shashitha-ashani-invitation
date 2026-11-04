@@ -1786,3 +1786,21 @@ button {
         font-size: 7px
     }
 }
+
+@media(max-width:650px) {
+    html {
+        scroll-snap-type: y mandatory;
+        scroll-padding-top: 0
+    }
+
+    .invitation-section,
+    .story-section,
+    .countdown-section,
+    .gallery-section,
+    .details-section,
+    .rsvp-section,
+    .story-copy {
+        scroll-snap-align: start;
+        scroll-snap-stop: always
+    }
+}
