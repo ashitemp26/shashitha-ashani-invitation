@@ -1497,3 +1497,273 @@ button {
         white-space: nowrap
     }
 }
+
+@media(max-width:650px) {
+    .invitation-section.section-pad {
+        height: 100svh;
+        min-height: 100svh;
+        padding: 16px 20px
+    }
+
+    .invitation-section .section-flower {
+        width: 42px;
+        margin-bottom: 6px
+    }
+
+    .invitation-section .eyebrow {
+        font-size: 10px;
+        margin-bottom: 8px
+    }
+
+    .invitation-section .invite-intro,
+    .invitation-section .invite-join {
+        font-size: 16px;
+        line-height: 1.25
+    }
+
+    .invitation-section .couple-names {
+        margin: 8px 0;
+        font-size: 50px
+    }
+
+    .invitation-section .date-lockup {
+        margin: 8px auto
+    }
+
+    .invitation-section .date-number {
+        font-size: 42px
+    }
+
+    .invitation-section .event-time {
+        margin-bottom: 4px
+    }
+
+    .invitation-section .venue-note {
+        font-size: 20px
+    }
+
+    .story-section.section-pad {
+        display: grid;
+        grid-template-rows: minmax(0, .45fr) minmax(0, .55fr) minmax(0, 1fr);
+        height: 200svh;
+        min-height: 200svh;
+        padding: 12px 24px
+    }
+
+    .story-heading {
+        grid-row: 1;
+        align-self: center;
+        margin: 0
+    }
+
+    .story-heading h2 {
+        font-size: 34px;
+        margin-bottom: 12px
+    }
+
+    .story-heading .section-description {
+        font-size: 15px;
+        line-height: 1.45
+    }
+
+    .story-grid {
+        display: contents
+    }
+
+    .story-image-tall {
+        grid-row: 2;
+        height: 100%;
+        min-height: 0
+    }
+
+    .story-copy {
+        grid-row: 3;
+        align-self: center;
+        padding: 12px 6px
+    }
+
+    .story-flower {
+        width: 44px;
+        margin-bottom: 10px
+    }
+
+    .story-number {
+        font-size: 10px
+    }
+
+    .story-copy h3 {
+        font-size: 33px;
+        margin: 8px 0 10px
+    }
+
+    .story-copy>p:not(.script-note) {
+        font-size: 15px;
+        line-height: 1.5
+    }
+
+    .heart-line {
+        margin: 14px 0
+    }
+
+    .countdown-section {
+        height: 100svh;
+        min-height: 100svh;
+        padding: 24px 18px
+    }
+
+    .gallery-section.section-pad {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100svh;
+        min-height: 100svh;
+        padding: 20px 24px
+    }
+
+    .gallery-heading {
+        margin-bottom: 20px
+    }
+
+    .gallery-heading h2 {
+        font-size: 34px
+    }
+
+    .gallery-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px
+    }
+
+    .gallery-photo {
+        height: clamp(110px, 20svh, 170px)
+    }
+
+    .gallery-photo.photo-2 {
+        height: clamp(130px, 24svh, 190px)
+    }
+
+    .gallery-photo.photo-1,
+    .gallery-photo.photo-3 {
+        height: clamp(105px, 18svh, 145px)
+    }
+
+    .details-section.section-pad {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 54svh;
+        min-height: 54svh;
+        padding: 16px 24px
+    }
+
+    .details-heading {
+        margin-bottom: 14px
+    }
+
+    .details-heading h2 {
+        font-size: 34px;
+        margin-bottom: 8px
+    }
+
+    .details-heading .section-description {
+        font-size: 15px;
+        line-height: 1.4
+    }
+
+    .details-actions .detail-action {
+        min-height: 38px
+    }
+
+    .closing-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 46svh;
+        min-height: 46svh;
+        padding: 14px 24px
+    }
+
+    .closing-flower {
+        width: 44px;
+        margin-bottom: 8px
+    }
+
+    .closing-section .eyebrow {
+        margin-bottom: 8px
+    }
+
+    .closing-section h2 {
+        font-size: 34px;
+        margin-bottom: 6px
+    }
+
+    .closing-section>p:not(.eyebrow):not(.closing-names):not(.closing-date) {
+        font-size: 15px;
+        margin: 6px 0 0
+    }
+
+    .rsvp-section {
+        height: calc(100svh - 52px);
+        min-height: 0;
+        padding: 8px 20px
+    }
+
+    .rsvp-inner>.eyebrow {
+        font-size: 10px;
+        margin-bottom: 6px
+    }
+
+    .rsvp-inner>h2 {
+        font-size: clamp(30px, 5vh, 38px);
+        margin-bottom: 6px
+    }
+
+    .rsvp-form {
+        gap: 5px
+    }
+
+    .rsvp-question {
+        gap: 2px
+    }
+
+    .rsvp-question legend {
+        padding-bottom: 2px;
+        font-size: 9px
+    }
+
+    .rsvp-options {
+        gap: 6px
+    }
+
+    .rsvp-option {
+        min-height: 30px;
+        padding: 4px 8px
+    }
+
+    .rsvp-form label {
+        gap: 3px;
+        font-size: 9px
+    }
+
+    .rsvp-form input,
+    .rsvp-form select {
+        min-height: 32px;
+        padding: 4px 8px
+    }
+
+    .rsvp-submit {
+        min-height: 32px
+    }
+
+    .back-top {
+        margin: 8px auto 0;
+        padding-bottom: 2px;
+        font-size: 8px
+    }
+
+    .site-footer {
+        padding: 10px 18px;
+        font-size: 7px
+    }
+}
