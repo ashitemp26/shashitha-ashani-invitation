@@ -1463,6 +1463,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-top: 8px;
     gap: 9px;
     min-height: 42px;
     padding: 0 22px;

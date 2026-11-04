@@ -7,10 +7,11 @@ import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, 
 const weddingDate = new Date('2026-12-04T19:00:00+05:30').getTime();
 const saveTheDateVideo = 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/IMG_1665.MOV';
 const photos = [
-  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4595.jpg.jpeg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkzNzUwNTg3ODM5LCJpYXQiOjE3OTM3MDczODc5OTd9.k0PlCId0bQU1wsJzOutLR-XX8-2ln-da3KjTfKsgi3I&vercel-blob-signature=AqonK3O9jJ9yczknuPg2CKemj-OlG4LWZMMKueq_68Y', alt: 'A celebration of love' },
-  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4555.jpg.jpeg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkzNzUwNTEwMDE3LCJpYXQiOjE3OTM3MDczMTAxNzN9.Zcnp3sAj_EsQ1Km7rhFPOLBM53p9pnIYIclBrzIyVF8&vercel-blob-signature=Jpgv5kRnefrFmQdJavB3Q1RJvoo2x71BgQ70Qhr9K9A', alt: 'Romantic wedding details' },
-  { src: 'https://sacfsjdvjdfbvjdfbjskdbvfjdkbd.dfbb', alt: 'A special moment together' },
+  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4595.jpg.jpeg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkzNzUwNTg3ODM5LCJpYXQiOjE3OTM3MDczODc5OTd9.k0PlCId0bQU1wsJzOutLR-XX8-2ln-da3KjTfKsgi3I&vercel-blob-signature=AqonK3O9jJ9yczknuPg2CKemj-OlG4LWZMMKueq_68Y', alt: 'Moments to Remember' },
+  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4555.jpg.jpeg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkzNzUwNTEwMDE3LCJpYXQiOjE3OTM3MDczMTAxNzN9.Zcnp3sAj_EsQ1Km7rhFPOLBM53p9pnIYIclBrzIyVF8&vercel-blob-signature=Jpgv5kRnefrFmQdJavB3Q1RJvoo2x71BgQ70Qhr9K9A', alt: 'Love in the Moment' },
+  { src: 'https://sacfsjdvjdfbvjdfbjskdbvfjdkbd.dfbb', alt: 'A Little More Us' },
 ];
+const photoCaptions = ['Moments to Remember', 'Love in the Moment', 'A Little More Us'];
 const storyPhoto = { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4575.jpg.jpeg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkzNzQ1NjI5ODM4LCJpYXQiOjE3OTM3MDI0MzAwMzN9.S1PEZ_C3MgxJkiLCKfcjrewSXbJCPBo2ncKh4mYpVrw&vercel-blob-signature=Cx9KSaCrSZdMFLcBMqfSYXOD2djCj9Sur0dO-1tNL8k', alt: 'Wedding couple holding hands' };
 
 function FloralMark({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 106C60 79 58 48 60 14M60 74C42 72 31 59 30 42C48 43 60 55 60 74ZM60 88C77 85 91 70 91 53C74 55 61 69 60 88Z" stroke="currentColor" strokeWidth="1.1" /><path d="M60 39C45 28 49 14 60 8C71 14 75 28 60 39ZM60 39C43 40 34 29 39 17C52 18 59 26 60 39ZM60 39C77 40 86 29 81 17C68 18 61 26 60 39Z" stroke="currentColor" strokeWidth="1.1" /></svg> }
@@ -169,7 +170,7 @@ export default function Home() {
 
 
 
-    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt} /><figcaption>Love, in a moment</figcaption></motion.figure>)}</div></section>
+    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt} /><figcaption>{photoCaptions[i]}</figcaption></motion.figure>)}</div></section>
 
     <section className="details-section section-pad" id="details">
       <div className="details-heading">{/* <p className="eyebrow">The day we’ve been dreaming of</p> */}
@@ -235,8 +236,7 @@ export default function Home() {
           }
         }}>
           <div className="rsvp-honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
-          <fieldset className="rsvp-question rsvp-response">
-            <legend>Your response</legend>
+          <fieldset className="rsvp-question rsvp-response" aria-label="RSVP response">
             <div className="rsvp-options">
               <button type="button" className={`rsvp-option${attendance === 'yes' ? ' is-selected' : ''}`} aria-pressed={attendance === 'yes'} onClick={() => { setAttendance('yes'); setRsvpTeam(''); setRsvpRelationship(''); setRsvpGuests(''); setRsvpStatus(''); }}>Joyfully accepts</button>
               <button type="button" className={`rsvp-option${attendance === 'no' ? ' is-selected' : ''}`} aria-pressed={attendance === 'no'} onClick={() => { setAttendance('no'); setRsvpTeam(''); setRsvpRelationship(''); setRsvpGuests(''); setRsvpStatus(''); }}>Regretfully declines</button>
@@ -244,29 +244,29 @@ export default function Home() {
           </fieldset>
           {attendance === 'yes' && <>
             <fieldset className="rsvp-question">
-              <legend>Q1: Which team are you in?</legend>
+              <legend>You're celebrating with</legend>
               <div className="rsvp-options">
                 <button type="button" className={`rsvp-option${rsvpTeam === 'bride' ? ' is-selected' : ''}`} aria-pressed={rsvpTeam === 'bride'} onClick={() => { setRsvpTeam('bride'); setRsvpStatus(''); }}>Bride</button>
                 <button type="button" className={`rsvp-option${rsvpTeam === 'groom' ? ' is-selected' : ''}`} aria-pressed={rsvpTeam === 'groom'} onClick={() => { setRsvpTeam('groom'); setRsvpStatus(''); }}>Groom</button>
               </div>
             </fieldset>
             <fieldset className="rsvp-question">
-              <legend>Q2: How do you know the couple?</legend>
+              <legend>How do you know us?</legend>
               <div className="rsvp-options">
                 <button type="button" className={`rsvp-option${rsvpRelationship === 'office' ? ' is-selected' : ''}`} aria-pressed={rsvpRelationship === 'office'} onClick={() => { setRsvpRelationship('office'); setRsvpStatus(''); }}>Office</button>
                 <button type="button" className={`rsvp-option${rsvpRelationship === 'friend' ? ' is-selected' : ''}`} aria-pressed={rsvpRelationship === 'friend'} onClick={() => { setRsvpRelationship('friend'); setRsvpStatus(''); }}>Friend</button>
               </div>
             </fieldset>
           </>}
-          <label className="rsvp-name">Your good name<input name="name" autoComplete="name" maxLength={120} required /></label>
+          <label className="rsvp-name">Your name<input name="name" autoComplete="name" maxLength={120} required /></label>
           {attendance === 'yes' && <fieldset className="rsvp-question rsvp-guest-count">
-            <legend>Number attending, including you</legend>
+            <legend>How many are coming along? (Including you!)</legend>
             <div className="rsvp-options">
               <button type="button" className={`rsvp-option${rsvpGuests === '1' ? ' is-selected' : ''}`} aria-pressed={rsvpGuests === '1'} onClick={() => { setRsvpGuests('1'); setRsvpStatus(''); }}>One</button>
               <button type="button" className={`rsvp-option${rsvpGuests === '2' ? ' is-selected' : ''}`} aria-pressed={rsvpGuests === '2'} onClick={() => { setRsvpGuests('2'); setRsvpStatus(''); }}>Two</button>
             </div>
           </fieldset>}
-          <button type="submit" className="rsvp-submit" disabled={rsvpSending}>{rsvpSending ? 'Sending…' : 'Submit'} <ArrowUpRight size={15} /></button>
+          <button type="submit" className="rsvp-submit" disabled={rsvpSending}>{rsvpSending ? 'Sending…' : 'Submit'}</button>
           {rsvpStatus && <p className="rsvp-status" role="status">{rsvpStatus}</p>}
         </form>
       </div>
