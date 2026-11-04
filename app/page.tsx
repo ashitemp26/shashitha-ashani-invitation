@@ -235,7 +235,7 @@ export default function Home() {
             setRsvpSending(false);
           }
         }}>
-          <div className="rsvp-honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
+          <div className="rsvp-honeypot" aria-hidden="true"><label>{/* Leave this field empty */}<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
           <fieldset className="rsvp-question rsvp-response" aria-label="RSVP response">
             <div className="rsvp-options">
               <button type="button" className={`rsvp-option${attendance === 'yes' ? ' is-selected' : ''}`} aria-pressed={attendance === 'yes'} onClick={() => { setAttendance('yes'); setRsvpTeam(''); setRsvpRelationship(''); setRsvpGuests(''); setRsvpStatus(''); }}>Joyfully accepts</button>
