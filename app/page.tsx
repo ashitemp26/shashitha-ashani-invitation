@@ -12,7 +12,7 @@ const photos = [
   { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4575.jpg.jpeg?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkzNzQ1NjI5ODM4LCJpYXQiOjE3OTM3MDI0MzAwMzN9.S1PEZ_C3MgxJkiLCKfcjrewSXbJCPBo2ncKh4mYpVrw&vercel-blob-signature=Cx9KSaCrSZdMFLcBMqfSYXOD2djCj9Sur0dO-1tNL8k', alt: 'Wedding couple holding hands' },
 ];
 
-function FloralMark({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 106C60 79 58 48 60 14M60 74C42 72 31 59 30 42C48 43 60 55 60 74ZM60 88C77 85 91 70 91 53C74 55 61 69 60 88Z" stroke="currentColor" strokeWidth="1.1"/><path d="M60 39C45 28 49 14 60 8C71 14 75 28 60 39ZM60 39C43 40 34 29 39 17C52 18 59 26 60 39ZM60 39C77 40 86 29 81 17C68 18 61 26 60 39Z" stroke="currentColor" strokeWidth="1.1"/></svg> }
+function FloralMark({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 106C60 79 58 48 60 14M60 74C42 72 31 59 30 42C48 43 60 55 60 74ZM60 88C77 85 91 70 91 53C74 55 61 69 60 88Z" stroke="currentColor" strokeWidth="1.1" /><path d="M60 39C45 28 49 14 60 8C71 14 75 28 60 39ZM60 39C43 40 34 29 39 17C52 18 59 26 60 39ZM60 39C77 40 86 29 81 17C68 18 61 26 60 39Z" stroke="currentColor" strokeWidth="1.1" /></svg> }
 
 export default function Home() {
   const [opened, setOpened] = useState(false);
@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
   const reveal = () => { setOpened(true); window.setTimeout(() => document.getElementById('invitation')?.scrollIntoView({ behavior: 'smooth' }), 550); };
   return <main>
-    
+
     <AnimatePresence>
       {!opened && (
         <motion.div
@@ -40,7 +40,7 @@ export default function Home() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
-        
+
           {/* full video
           <video
             className="absolute inset-0 h-full w-full object-cover"
@@ -86,7 +86,7 @@ export default function Home() {
             }}
           />
 
-        
+
 
           <motion.div
             className="pointer-events-none absolute inset-0"
@@ -109,8 +109,8 @@ export default function Home() {
 
           <div className="pointer-events-none absolute inset-0 border-[10px] border-[#f5ead5]/25 sm:border-[18px]" />
 
-        
-        
+
+
           <button
             className="absolute bottom-5 right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white"
             onClick={reveal}
@@ -121,9 +121,9 @@ export default function Home() {
       )}
     </AnimatePresence>
 
-    <button className="music-toggle" onClick={() => setMusicOn(v => !v)} aria-label={musicOn ? 'Turn music off' : 'Turn music on'}>{musicOn ? <Music2 size={16}/> : <VolumeX size={16}/>}<span>{musicOn ? 'Music on' : 'Music off'}</span></button>
+    <button className="music-toggle" onClick={() => setMusicOn(v => !v)} aria-label={musicOn ? 'Turn music off' : 'Turn music on'}>{musicOn ? <Music2 size={16} /> : <VolumeX size={16} />}<span>{musicOn ? 'Music on' : 'Music off'}</span></button>
 
-    
+
     <motion.section
       className="invitation-section section-pad"
       id="invitation"
@@ -133,48 +133,48 @@ export default function Home() {
     >
       <div className="section-frame" />
       <motion.div className="invite-inner" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .25 }} transition={{ duration: .8 }}>
-        <FloralMark className="section-flower"/><p className="eyebrow">Together with our families</p>
+        <FloralMark className="section-flower" /><p className="eyebrow">Together with our families</p>
         <p className="invite-intro">With hearts full of love and gratitude,</p><p className="invite-intro">we invite you to join us as we begin</p><p className="invite-intro">our forever together.</p>
         <h1 className="couple-names"><span>Ashani</span><i>&</i><span>Shashitha</span></h1>
         <p className="invite-join">would be delighted by your presence</p><p className="invite-join">at the celebration of their marriage</p>
         <div className="date-lockup"><span className="date-day">FRIDAY</span><span className="date-number">04</span><span className="date-month">DECEMBER</span></div>
         <p className="event-time">From 7 PM onwards</p>
-        <p className="venue-name">Saffron, Wadduwa</p><br/><p className="venue-note">As the sun sets, a new forever begins.</p>
+        <p className="venue-name">Saffron, Wadduwa</p><br /><p className="venue-note">As the sun sets, a new forever begins.</p>
       </motion.div>
     </motion.section>
 
-    <section className="story-section section-pad" id="story"><div className="story-heading"><p className="eyebrow">SOME STORIES ARE WRITTEN BY DESTINY</p><h2>We were closer than we knew.<br/><em>Until life brought us together.</em></h2><p className="section-description">We were once part of the same little world, yet complete strangers to each other,never imagining that life would bring us together years later.</p></div>
-      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt}/><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower"/><span className="story-number">A LITTLE BIT OF DESTINY</span><h3>Different paths.<br/><em>One beautiful destination.</em></h3><p>One starry night brought two strangers together, and a thousand conversations made them each other's favourite person. Perhaps life was simply waiting for the right moment to bring us together.</p><div className="heart-line"><span/><Heart size={14}/><span/></div></div></div>
+    <section className="story-section section-pad" id="story"><div className="story-heading"><p className="eyebrow">SOME STORIES ARE WRITTEN BY DESTINY</p><h2>We were closer than we knew.<br /><em>Until life brought us together.</em></h2><p className="section-description">We were once part of the same little world, yet complete strangers to each other,never imagining that life would bring us together years later.</p></div>
+      <div className="story-grid"><motion.div className="story-image story-image-tall" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}><img src={photos[2].src} alt={photos[2].alt} /><span className="image-caption">The beginning of forever</span></motion.div><div className="story-copy"><FloralMark className="story-flower" /><span className="story-number">A LITTLE BIT OF DESTINY</span><h3>Different paths.<br /><em>One beautiful destination.</em></h3><p>One starry night brought two strangers together, and a thousand conversations made them each other's favourite person. Perhaps life was simply waiting for the right moment to bring us together.</p><div className="heart-line"><span /><Heart size={14} /><span /></div></div></div>
     </section>
 
-    <section className="countdown-section"><div className="countdown-overlay"/><div className="countdown-content"><Sparkles size={18} strokeWidth={1}/><p className="eyebrow">The countdown to our day</p><h2>Until we say <em>“I do”</em></h2><div className="countdown-grid">{Object.entries(timeLeft).map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}</div><p className="countdown-note">We can’t wait to celebrate with you.</p></div></section>
+    <section className="countdown-section"><div className="countdown-overlay" /><div className="countdown-content"><Sparkles size={18} strokeWidth={1} /><p className="eyebrow">The countdown to our day</p><h2>Until we say <em>“I do”</em></h2><div className="countdown-grid">{Object.entries(timeLeft).map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}</div><p className="countdown-note">We can’t wait to celebrate with you.</p></div></section>
 
-    
 
-    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br/>one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt}/><figcaption>Love, in a moment</figcaption></motion.figure>)}</div></section>
+
+    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div><p className="gallery-note">Our memories, captured<br />one frame at a time.</p></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt} /><figcaption>Love, in a moment</figcaption></motion.figure>)}</div></section>
 
     <section className="details-section section-pad" id="details">
       <div className="details-heading"><p className="eyebrow">The day we’ve been dreaming of</p>
-      <h2>Join us for <em>the celebration</em></h2>
-      <p className="section-description">A little gathering, a lot of love, and memories we’ll carry forever.</p></div>
+        <h2>Join us for <em>the celebration</em></h2>
+        <p className="section-description">A little gathering, a lot of love, and memories we’ll carry forever.</p></div>
       <div className="details-actions" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 'clamp(12px, 4vw, 28px)', width: 'min(100%, 520px)', margin: '0 auto' }}>
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ashani%20%26%20Shashitha%27s%20Wedding&dates=20261204T133000Z/20261204T183000Z&details=Wedding%20celebration%20of%20Ashani%20and%20Shashitha&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link detail-action" style={{ position: 'relative', display: 'flex', width: '100%', minWidth: 0, alignItems: 'center', justifyContent: 'center', padding: '0 32px 0 12px', textAlign: 'center' }}>Save the date <ArrowUpRight size={14} style={{ position: 'absolute', right: 12, flexShrink: 0 }}/></a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link detail-action" style={{ position: 'relative', display: 'flex', width: '100%', minWidth: 0, alignItems: 'center', justifyContent: 'center', padding: '0 32px 0 12px', textAlign: 'center' }}>Get directions <ArrowUpRight size={14} style={{ position: 'absolute', right: 12, flexShrink: 0 }}/></a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ashani%20%26%20Shashitha%27s%20Wedding&dates=20261204T133000Z/20261204T183000Z&details=Wedding%20celebration%20of%20Ashani%20and%20Shashitha&location=Saffron%2C%20Wadduwa" target="_blank" rel="noreferrer" className="text-link detail-action" style={{ position: 'relative', display: 'flex', width: '100%', minWidth: 0, alignItems: 'center', justifyContent: 'center', padding: '0 32px 0 12px', textAlign: 'center' }}>Save the date <ArrowUpRight size={14} style={{ position: 'absolute', right: 12, flexShrink: 0 }} /></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Saffron+Wadduwa+Sri+Lanka" target="_blank" rel="noreferrer" className="text-link detail-action" style={{ position: 'relative', display: 'flex', width: '100%', minWidth: 0, alignItems: 'center', justifyContent: 'center', padding: '0 32px 0 12px', textAlign: 'center' }}>Get directions <ArrowUpRight size={14} style={{ position: 'absolute', right: 12, flexShrink: 0 }} /></a>
       </div>
     </section>
 
-    <section className="closing-section"><FloralMark className="closing-flower"/>
-    <p className="eyebrow">With all our love</p>
-    <h2>We saved you <em>a place</em><br/>in our happiest day.</h2>
-    <p>Having you with us would mean the world.</p></section>
-      
-    
+    <section className="closing-section"><FloralMark className="closing-flower" />
+      <p className="eyebrow">With all our love</p>
+      <h2>We saved you <em>a place</em><br />in our happiest day.</h2>
+      <p>Having you with us would mean the world.</p></section>
+
+
     <section className="rsvp-section section-pad" id="rsvp">
       <div className="rsvp-inner">
         <p className="eyebrow">Kindly reply</p>
         <h2>Will you join <em>us?</em></h2>
         <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
-        <p className="rsvp-note">Your reply will be shared privately with the couple.</p> 
+        <p className="rsvp-note">Your reply will be shared privately with the couple.</p>
         <form className="rsvp-form" onSubmit={async event => {
           event.preventDefault();
           const form = event.currentTarget;
@@ -248,13 +248,13 @@ export default function Home() {
               <button type="button" className={`rsvp-option${rsvpGuests === '2' ? ' is-selected' : ''}`} aria-pressed={rsvpGuests === '2'} onClick={() => { setRsvpGuests('2'); setRsvpStatus(''); }}>Two</button>
             </div>
           </fieldset>}
-          <button type="submit" className="rsvp-submit" disabled={rsvpSending}>{rsvpSending ? 'Sending…' : 'Submit'} <ArrowUpRight size={15}/></button>
+          <button type="submit" className="rsvp-submit" disabled={rsvpSending}>{rsvpSending ? 'Sending…' : 'Submit'} <ArrowUpRight size={15} /></button>
           {rsvpStatus && <p className="rsvp-status" role="status">{rsvpStatus}</p>}
         </form>
       </div>
     </section>
 
-    <a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14}/></a>
+    <a href="#top" className="back-top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Back to the beginning <ArrowUpRight size={14} /></a>
 
     <footer className="site-footer"><span>Made with love, for our favourite people.</span><span>© A & S · 2026</span></footer>
   </main>;
