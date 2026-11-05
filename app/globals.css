@@ -88,7 +88,7 @@ button {
 }
 
 .eyebrow {
-    font-size: 15x;
+    font-size: 16x;
     letter-spacing: .25em;
     text-transform: uppercase;
     font-weight: 600;
@@ -439,7 +439,7 @@ button {
 
 .venue-name {
     font-family: var(--font-cormorant), serif;
-    font-size: 25px;
+    font-size: 24px;
     margin: 0 0 6px
 }
 
@@ -1241,7 +1241,7 @@ button {
     margin: 2px 0;
     line-height: 1.45;
     font-family: var(--font-cormorant), serif;
-    font-size: 19px;
+    font-size: 17px;
     color: #62685f;
     font-weight: 500;
     letter-spacing: 0
@@ -1268,7 +1268,7 @@ button {
 
 .invitation-section .event-time {
     font-family: var(--font-cormorant), serif;
-    font-size: clamp(17px, 2.2vh, 21px);
+    font-size: 18px;
     line-height: 1.2;
     color: var(--ink);
     margin: 0 0 8px
