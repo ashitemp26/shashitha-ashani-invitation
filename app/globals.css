@@ -1249,7 +1249,7 @@ button {
 
 .invitation-section .couple-names {
     font-size: clamp(50px, 8vh, 72px);
-    line-height: .82;
+    line-height: normal;
     margin: clamp(20px, 3vh, 24px) 0 clamp(10px, 1.7vh, 18px)
 }
 
