@@ -425,7 +425,7 @@ button {
 .date-number {
     font-family: var(--font-cormorant), serif;
     font-size: 58px;
-    line-height: 1;
+    line-height: 0.8;
     border-left: 1px solid var(--line);
     border-right: 1px solid var(--line);
     padding: 0 18px;
@@ -1052,7 +1052,7 @@ button {
 
     .date-number {
         font-size: 50px;
-        padding: 0 13px
+        padding: 0px 10px 8px 10px
     }
 
     .date-day,
