@@ -27,6 +27,7 @@ export default function Home() {
   const [rsvpRelationship, setRsvpRelationship] = useState<'office' | 'friend' | ''>('');
   const [rsvpGuests, setRsvpGuests] = useState<'1' | '2' | ''>('');
   const [saveDateVisible, setSaveDateVisible] = useState(true);
+  const nameFieldVisible = attendance && (attendance === 'no' || (attendance === 'yes' && !!rsvpTeam && !!rsvpRelationship));
   useEffect(() => {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
@@ -258,7 +259,9 @@ export default function Home() {
               </div>
             </fieldset>
           </>}
-          <label className="rsvp-name">Your name<input name="name" autoComplete="name" maxLength={120} required /></label>
+          {nameFieldVisible && (
+            <label className="rsvp-name">Your name<input name="name" autoComplete="name" maxLength={120} required /></label>
+          )}
           {attendance === 'yes' && <fieldset className="rsvp-question rsvp-guest-count">
             <legend>How many are coming along? (Including you!)</legend>
             <div className="rsvp-options">
