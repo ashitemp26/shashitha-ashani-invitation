@@ -375,7 +375,7 @@ button {
     font-size: 20px;
     line-height: 1.55;
     color: #62685f;
-    margin: 0 0 10px
+    margin: 0 0 18px
 }
 
 .couple-names {
@@ -388,7 +388,7 @@ button {
     font-weight: 400;
     line-height: .97;
     color: var(--ink);
-    margin: 18px 0 12px
+    margin: 18px 0 18px
 }
 
 .couple-names i {
@@ -403,7 +403,7 @@ button {
     font-family: var(--font-cormorant), serif;
     font-size: 20px;
     color: #62685f;
-    margin: 0
+    margin: 18px 0 0
 }
 
 .date-lockup {
@@ -1238,7 +1238,7 @@ button {
 
 .invitation-section .invite-intro,
 .invitation-section .invite-join {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     line-height: 1.45;
     font-family: var(--font-cormorant), serif;
     font-size: 19px;
@@ -1250,7 +1250,11 @@ button {
 .invitation-section .couple-names {
     font-size: clamp(50px, 8vh, 72px);
     line-height: .82;
-    margin: clamp(8px, 1.5vh, 16px) 0 clamp(6px, 1.2vh, 10px)
+    margin: clamp(10px, 1.7vh, 18px) 0 clamp(10px, 1.7vh, 18px)
+}
+
+.invitation-section .invite-join {
+    margin-top: 10px
 }
 
 .invitation-section .couple-names i {
