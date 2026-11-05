@@ -88,7 +88,7 @@ button {
 }
 
 .eyebrow {
-    font-size: 16x;
+    font-size: 18px;
     letter-spacing: .25em;
     text-transform: uppercase;
     font-weight: 600;
@@ -372,7 +372,7 @@ button {
 
 .invite-intro {
     font-family: var(--font-cormorant), serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.55;
     color: #62685f;
     margin: 0
@@ -401,7 +401,7 @@ button {
 
 .invite-join {
     font-family: var(--font-cormorant), serif;
-    font-size: 18px;
+    font-size: 20px;
     color: #62685f;
     margin: 3px 0
 }
@@ -1241,7 +1241,7 @@ button {
     margin: 2px 0;
     line-height: 1.45;
     font-family: var(--font-cormorant), serif;
-    font-size: 17px;
+    font-size: 19px;
     color: #62685f;
     font-weight: 500;
     letter-spacing: 0
@@ -1531,13 +1531,13 @@ button {
     }
 
     .invitation-section .eyebrow {
-        font-size: 10px;
+        font-size: 12px;
         margin-bottom: 8px
     }
 
     .invitation-section .invite-intro,
     .invitation-section .invite-join {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.25
     }
 
