@@ -559,8 +559,8 @@ button {
 
 .story-number {
     display: block;
-    font-size: 12px;
-    letter-spacing: .22em;
+    font-size: 16.5px;
+    letter-spacing: .16em;
     text-transform: uppercase;
     font-weight: 600;
     color: var(--gold);
@@ -1616,7 +1616,7 @@ button {
     }
 
     .story-number {
-        font-size: 10px
+        font-size: 16.5px
     }
 
     .story-copy h3 {
