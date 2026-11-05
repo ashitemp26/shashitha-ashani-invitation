@@ -88,8 +88,8 @@ button {
 }
 
 .eyebrow {
-    font-size: 18px;
-    letter-spacing: .25em;
+    font-size: 16.5px;
+    letter-spacing: .16em;
     text-transform: uppercase;
     font-weight: 600;
     color: var(--gold);
@@ -558,9 +558,13 @@ button {
 }
 
 .story-number {
+    display: block;
     font-size: 12px;
-    letter-spacing: .2em;
-    color: var(--gold)
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 0 0 18px
 }
 
 .story-copy h3 {
@@ -1535,7 +1539,7 @@ button {
     }
 
     .invitation-section .eyebrow {
-        font-size: 12px;
+        font-size: 13.5px;
         margin-bottom: 8px
     }
 
@@ -1586,7 +1590,7 @@ button {
     }
 
     .story-heading .section-description {
-        font-size: 15px;
+        font-size: 18px;
         line-height: 1.45
     }
 
