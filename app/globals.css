@@ -787,11 +787,13 @@ button {
     justify-content: space-between;
     align-items: end;
     max-width: 1000px;
-    margin: 0 1px 42px
+    margin: 0 0 42px;
+    text-align: left
 }
 
 .gallery-heading h2 {
-    margin: 0
+    margin: 0;
+    text-align: left
 }
 
 .gallery-note {
@@ -1652,11 +1654,13 @@ button {
     }
 
     .gallery-heading {
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        text-align: left
     }
 
     .gallery-heading h2 {
-        font-size: 34px
+        font-size: 34px;
+        text-align: left
     }
 
     .gallery-grid {
