@@ -787,7 +787,7 @@ button {
     justify-content: space-between;
     align-items: end;
     max-width: 1000px;
-    margin: 0 auto 42px
+    margin: 0 1px 42px
 }
 
 .gallery-heading h2 {
@@ -1567,7 +1567,7 @@ button {
     }
 
     .invitation-section .venue-note {
-        font-size: 20px
+        font-size: 24px
     }
 
     .story-section.section-pad {
@@ -1620,7 +1620,7 @@ button {
     }
 
     .story-copy h3 {
-        font-size: 33px;
+        font-size: 32px;
         margin: 8px 0 10px
     }
 
@@ -1694,7 +1694,7 @@ button {
     }
 
     .details-heading .section-description {
-        font-size: 15px;
+        font-size: 18px;
         line-height: 1.4
     }
 

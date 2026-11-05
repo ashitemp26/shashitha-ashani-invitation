@@ -191,7 +191,7 @@ export default function Home() {
     <section className="rsvp-section section-pad" id="rsvp">
       <div className="rsvp-inner">
         <p className="eyebrow">Kindly reply</p>
-        <h2>Will you join <em>us?</em></h2>
+        <h2>Will you join <em>us?</em></h2><br/>
         {/* <p className="rsvp-intro">Please let us know if you can celebrate with us.</p>
         <p className="rsvp-note">Your reply will be shared privately with the couple.</p> */}
         <form className="rsvp-form" onSubmit={async event => {
