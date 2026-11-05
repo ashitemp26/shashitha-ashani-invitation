@@ -170,7 +170,7 @@ export default function Home() {
 
 
 
-    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Little moments, big love</p><h2>A glimpse into <em>our world</em></h2></div></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt} /><figcaption>{photoCaptions[i]}</figcaption></motion.figure>)}</div></section>
+    <section className="gallery-section section-pad" id="gallery"><div className="gallery-heading"><div><p className="eyebrow">Love in Every Frame</p><h2>A glimpse into <em>our world</em></h2></div></div><div className="gallery-grid">{photos.map((photo, i) => <motion.figure key={photo.src} className={`gallery-photo photo-${i + 1}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .12, duration: .65 }}><img src={photo.src} alt={photo.alt} /><figcaption>{photoCaptions[i]}</figcaption></motion.figure>)}</div></section>
 
     <section className="details-section section-pad" id="details">
       <div className="details-heading">{/* <p className="eyebrow">The day we’ve been dreaming of</p> */}
