@@ -1304,12 +1304,15 @@ button {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    min-height: 44px;
-    padding: 0 20px;
+    min-height: 40px;
+    padding: 0 28px;
     border: 1px solid var(--line);
     border-radius: 16px;
     background: var(--ink);
     color: var(--white);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
     text-decoration: none
 }
 
@@ -1519,9 +1522,9 @@ button {
     }
 
     .details-actions .detail-action {
-        gap: 4px;
-        padding: 0 12px;
-        font-size: 9px;
+        gap: 6px;
+        padding: 0 18px;
+        font-size: 12px;
         white-space: nowrap
     }
 }
