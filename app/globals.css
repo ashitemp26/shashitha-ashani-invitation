@@ -825,6 +825,10 @@ button {
     height: 390px
 }
 
+.gallery-photo.photo-2 img {
+    object-position: center 90%
+}
+
 .gallery-photo:after {
     content: "";
     position: absolute;
@@ -1720,6 +1724,10 @@ button {
 
     .gallery-photo.photo-2 {
         height: clamp(130px, 24svh, 190px)
+    }
+
+    .gallery-photo.photo-2 img {
+        object-position: center
     }
 
     .gallery-photo.photo-1,
