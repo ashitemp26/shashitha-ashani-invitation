@@ -1379,7 +1379,7 @@ button {
 .rsvp-form {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 13px 16px
+    gap: 20px 16px
 }
 
 .rsvp-form label {
@@ -1404,6 +1404,10 @@ button {
     color: var(--ink);
     font-size: 16px;
     letter-spacing: .08em
+}
+
+.rsvp-form label.rsvp-name {
+    font-size: 16px
 }
 
 .rsvp-response,
@@ -1434,6 +1438,10 @@ button {
 .rsvp-question:not(.rsvp-response) .rsvp-option {
     height: 43px;
     border-radius: 8px
+}
+
+.rsvp-response .rsvp-option {
+    height: 43px
 }
 
 .rsvp-option.is-selected {
@@ -1471,7 +1479,7 @@ button {
 
 .rsvp-name input {
     height: 43px;
-    border-radius: 8px
+    border-radius: 16px
 }
 
 .rsvp-form textarea {
@@ -1486,16 +1494,17 @@ button {
 .rsvp-submit {
     grid-column: 1/-1;
     justify-self: center;
+    width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-top: 8px;
     gap: 9px;
-    min-height: 40px;
+    min-height: 44px;
     padding: 0 28px;
     border: 1px solid var(--line);
     border-radius: 16px;
-    background: var(--ink);
+    background: #9e7a42;
     color: var(--white);
     font-size: 12px;
     font-weight: 500;
@@ -1812,7 +1821,7 @@ button {
     }
 
     .rsvp-submit {
-        min-height: 38px;
+        min-height: 44px;
         padding: 0 18px
     }
 
