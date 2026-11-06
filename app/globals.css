@@ -1479,7 +1479,7 @@ button {
 
 .rsvp-name input {
     height: 43px;
-    border-radius: 16px
+    border-radius: 8px
 }
 
 .rsvp-form textarea {
@@ -1813,7 +1813,8 @@ button {
     }
 
     .rsvp-name input {
-        height: 43px
+        height: 43px;
+        border-radius: 16px
     }
 
     .rsvp-form .rsvp-question:not(.rsvp-response) .rsvp-option {
