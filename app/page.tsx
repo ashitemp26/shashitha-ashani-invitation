@@ -2,17 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, Volume2, VolumeX, Heart, Sparkles } from 'lucide-react';
 
 const weddingDate = new Date('2026-12-04T19:00:00+05:30').getTime();
 const saveTheDateVideo = 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/IMG_1665.MOV';
 const photos = [
-  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4555.jpg.jpeg?vercel-blob-valid-until=1793988656494&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzk0MDMxNjU1NDcyLCJpYXQiOjE3OTM5ODg0NTU2NTN9.qGeIpSv85BP9iAaOGcG4UhBB5dNPXtvrcDiCFDnvBg8&vercel-blob-signature=_xH83VWbJYH_gtdMiQ8ib75WrfB2ZMy353ZWaaULhq0', alt: 'Moments to Remember' },
-  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4595.jpg.jpeg?vercel-blob-valid-until=1793988725350&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzk0MDMxNjU1NDcyLCJpYXQiOjE3OTM5ODg0NTU2NTN9.qGeIpSv85BP9iAaOGcG4UhBB5dNPXtvrcDiCFDnvBg8&vercel-blob-signature=WV9JKJIU4FXP6s263KcATVESuHVvtg5YmKzBbQVKCK0', alt: 'Love in the Moment' },
-  { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4550.jpg.jpeg?vercel-blob-valid-until=1793988874394&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzk0MDMxNjU1NDcyLCJpYXQiOjE3OTM5ODg0NTU2NTN9.qGeIpSv85BP9iAaOGcG4UhBB5dNPXtvrcDiCFDnvBg8&vercel-blob-signature=iJWFsbMtyUmU8COHlAygQr8RkacmJnOV5_bEVBcxXg8', alt: 'A Little More Us' },
+  { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4595.jpg.jpeg', alt: 'Moments to Remember' },
+  { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4555.jpg.jpeg', alt: 'Love in the Moment' },
+  { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4550.jpg.jpeg', alt: 'A Little More Us' },
 ];
 const photoCaptions = ['Moments to Remember', 'Love in the Moment', 'A Little More Us'];
-const storyPhoto = { src: 'https://qc0m9d97iu3krw1r.private.blob.vercel-storage.com/WBP_4575.jpg.jpeg?vercel-blob-valid-until=1793988810997&vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfcWMwbTlEOTdJdTNLUlcxUiIsIm93bmVySWQiOiJ0ZWFtX3VYS0xFcTZ3ekdtR2hmSWpDbnVWWm9oYSIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzk0MDMxNjU1NDcyLCJpYXQiOjE3OTM5ODg0NTU2NTN9.qGeIpSv85BP9iAaOGcG4UhBB5dNPXtvrcDiCFDnvBg8&vercel-blob-signature=eAKshmdVUNbyXUL4cng2n4lPx3ByiKjNF7z-EA_adig', alt: 'Wedding couple holding hands' };
+const storyPhoto = { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4575.jpg.jpeg', alt: 'Wedding couple holding hands' };
 
 function FloralMark({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 106C60 79 58 48 60 14M60 74C42 72 31 59 30 42C48 43 60 55 60 74ZM60 88C77 85 91 70 91 53C74 55 61 69 60 88Z" stroke="currentColor" strokeWidth="1.1" /><path d="M60 39C45 28 49 14 60 8C71 14 75 28 60 39ZM60 39C43 40 34 29 39 17C52 18 59 26 60 39ZM60 39C77 40 86 29 81 17C68 18 61 26 60 39Z" stroke="currentColor" strokeWidth="1.1" /></svg> }
 
@@ -20,6 +20,7 @@ export default function Home() {
   const [opened, setOpened] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [musicOn, setMusicOn] = useState(false);
+  const [videoSoundOn, setVideoSoundOn] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState('');
   const [rsvpSending, setRsvpSending] = useState(false);
   const [attendance, setAttendance] = useState<'yes' | 'no' | ''>('');
@@ -90,7 +91,7 @@ export default function Home() {
             className="absolute inset-0 h-full w-full object-contain"
             src={saveTheDateVideo}
             autoPlay
-            muted
+            muted={!videoSoundOn}
             playsInline
             preload="auto"
             onTimeUpdate={event => {
@@ -132,6 +133,16 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 border-[10px] border-[#f5ead5]/25 sm:border-[18px]" />
 
 
+
+          <button
+            type="button"
+            className="absolute bottom-5 left-5 z-20 rounded-full border border-white/60 bg-black/30 p-3 text-white"
+            onClick={() => setVideoSoundOn(value => !value)}
+            aria-label={videoSoundOn ? 'Mute video' : 'Unmute video'}
+            title={videoSoundOn ? 'Mute video' : 'Unmute video'}
+          >
+            {videoSoundOn ? <Volume2 size={16} /> : <VolumeX size={16} />}
+          </button>
 
           <button
             className="absolute bottom-5 right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white"
