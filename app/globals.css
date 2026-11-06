@@ -1431,6 +1431,10 @@ button {
     cursor: pointer
 }
 
+.rsvp-question:not(.rsvp-response) .rsvp-option {
+    border-radius: 8px
+}
+
 .rsvp-option.is-selected {
     border-color: var(--ink);
     background: var(--ink);
