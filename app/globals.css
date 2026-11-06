@@ -1394,7 +1394,7 @@ button {
     display: grid;
     gap: 6px;
     min-width: 0;
-    margin: 0;
+    margin: 0 0 8px;
     padding: 0;
     border: 0
 }
@@ -1402,7 +1402,7 @@ button {
 .rsvp-question legend {
     padding: 0 0 6px;
     color: var(--ink);
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: .08em
 }
 
@@ -1432,6 +1432,7 @@ button {
 }
 
 .rsvp-question:not(.rsvp-response) .rsvp-option {
+    height: 43px;
     border-radius: 8px
 }
 
@@ -1469,6 +1470,7 @@ button {
 }
 
 .rsvp-name input {
+    height: 43px;
     border-radius: 8px
 }
 
@@ -1772,12 +1774,13 @@ button {
     }
 
     .rsvp-question {
-        gap: 2px
+        gap: 2px;
+        margin-bottom: 8px
     }
 
     .rsvp-question legend {
         padding-bottom: 2px;
-        font-size: 18px
+        font-size: 16px
     }
 
     .rsvp-options {
@@ -1798,6 +1801,14 @@ button {
     .rsvp-form select {
         min-height: 32px;
         padding: 4px 8px
+    }
+
+    .rsvp-name input {
+        height: 43px
+    }
+
+    .rsvp-form .rsvp-question:not(.rsvp-response) .rsvp-option {
+        border-radius: 16px
     }
 
     .rsvp-submit {
