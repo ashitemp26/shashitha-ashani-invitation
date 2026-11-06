@@ -92,6 +92,13 @@ export default function Home() {
             autoPlay
             playsInline
             preload="auto"
+            onCanPlay={event => {
+              const video = event.currentTarget;
+              void video.play().catch(() => {
+                video.muted = true;
+                void video.play();
+              });
+            }}
             onTimeUpdate={event => {
               const video = event.currentTarget;
               if (video.currentTime >= 16) {
