@@ -611,7 +611,7 @@ button {
     text-align: center;
     color: #fffdf9;
     padding: 80px 24px;
-    background: #424a3e url('/back.jpeg') center bottom/cover no-repeat
+    background: #424a3e url('/back.png') center bottom/cover no-repeat
 }
 
 .countdown-overlay {
