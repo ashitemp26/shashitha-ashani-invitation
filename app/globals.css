@@ -1379,7 +1379,7 @@ button {
 .rsvp-form {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 20px 16px
+    gap: 0 16px
 }
 
 .rsvp-form label {
@@ -1408,6 +1408,26 @@ button {
 
 .rsvp-form label.rsvp-name {
     font-size: 16px
+}
+
+.rsvp-response {
+    margin-bottom: 14px
+}
+
+.rsvp-name {
+    margin-bottom: 0
+}
+
+.rsvp-name + .rsvp-guest-count {
+    margin-top: 8px
+}
+
+.rsvp-name + .rsvp-submit {
+    margin-top: 18px
+}
+
+.rsvp-guest-count {
+    margin-bottom: 18px
 }
 
 .rsvp-response,
@@ -1498,7 +1518,7 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 0;
     gap: 9px;
     min-height: 44px;
     padding: 0 28px;
@@ -1789,14 +1809,6 @@ button {
 
     .rsvp-response {
         margin-bottom: 14px
-    }
-
-    .rsvp-name {
-        margin-bottom: 8px
-    }
-
-    .rsvp-guest-count {
-        margin-bottom: 18px
     }
 
     .rsvp-question legend {
