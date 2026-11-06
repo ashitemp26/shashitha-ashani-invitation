@@ -628,8 +628,9 @@ button {
 }
 
 .countdown-content>svg {
+    display: block;
     color: var(--gold-light);
-    margin-bottom: 18px
+    margin: 0 auto 18px
 }
 
 .countdown-content .eyebrow {
