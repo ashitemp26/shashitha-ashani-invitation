@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, Play, VolumeX, Heart, Sparkles } from 'lucide-react';
 
 const weddingDate = new Date('2026-12-04T19:00:00+05:30').getTime();
 const saveTheDateVideo = '/video.mp4';
@@ -18,6 +18,8 @@ function FloralMark({ className = '' }: { className?: string }) { return <svg cl
 
 export default function Home() {
   const [opened, setOpened] = useState(false);
+  const [videoStarted, setVideoStarted] = useState(false);
+  const [videoError, setVideoError] = useState('');
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [musicOn, setMusicOn] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState('');
@@ -27,6 +29,7 @@ export default function Home() {
   const [rsvpRelationship, setRsvpRelationship] = useState<'office' | 'friend' | ''>('');
   const [rsvpGuests, setRsvpGuests] = useState<'1' | '2' | ''>('');
   const [saveDateVisible, setSaveDateVisible] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
@@ -49,6 +52,18 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
   const reveal = () => { setOpened(true); window.setTimeout(() => document.getElementById('invitation')?.scrollIntoView({ behavior: 'smooth' }), 550); };
+  const playVideoWithSound = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = false;
+    setVideoError('');
+    try {
+      await video.play();
+      setVideoStarted(true);
+    } catch {
+      setVideoError('The video could not be played. Please try again.');
+    }
+  };
   return <main>
 
     <AnimatePresence>
@@ -87,18 +102,12 @@ export default function Home() {
 
           {/* Main video — full frame visible */}
           <video
+            ref={videoRef}
             className="absolute inset-0 h-full w-full object-contain"
             src={saveTheDateVideo}
-            autoPlay
             playsInline
-            preload="auto"
-            onCanPlay={event => {
-              const video = event.currentTarget;
-              void video.play().catch(() => {
-                video.muted = true;
-                void video.play();
-              });
-            }}
+            preload="metadata"
+            controls={videoStarted}
             onTimeUpdate={event => {
               const video = event.currentTarget;
               if (video.currentTime >= 16) {
@@ -108,10 +117,24 @@ export default function Home() {
             onEnded={reveal}
             onError={() => {
               console.error('The Save the Date video could not be loaded.');
+              setVideoError('The video could not be loaded. Please try again.');
             }}
           />
 
-
+          {!videoStarted && (
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3">
+              <button
+                type="button"
+                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/70 bg-black/45 px-7 text-sm font-medium uppercase tracking-[0.16em] text-white backdrop-blur-sm"
+                onClick={playVideoWithSound}
+                aria-label="Play video with sound"
+              >
+                <Play size={18} fill="currentColor" />
+                <span>Play with sound</span>
+              </button>
+              {videoError && <p className="max-w-xs text-center text-sm text-white" role="alert">{videoError}</p>}
+            </div>
+          )}
 
           <motion.div
             className="pointer-events-none absolute inset-0"
@@ -140,7 +163,7 @@ export default function Home() {
 
 
           <button
-            className="absolute bottom-5 right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white"
+            className={`absolute right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white ${videoStarted ? 'bottom-16' : 'bottom-5'}`}
             onClick={reveal}
           >
             Skip
