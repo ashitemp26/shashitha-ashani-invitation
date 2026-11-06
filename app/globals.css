@@ -1811,6 +1811,10 @@ button {
         margin-bottom: 14px
     }
 
+    .rsvp-guest-count {
+        margin-bottom: 0
+    }
+
     .rsvp-question legend {
         padding-bottom: 2px;
         font-size: 16px
@@ -1847,7 +1851,7 @@ button {
 
     .rsvp-submit {
         min-height: 44px;
-        margin-top: 0;
+        margin-top: 18px;
         padding: 0 18px
     }
 
