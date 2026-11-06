@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, Volume2, VolumeX, Heart, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, Sparkles } from 'lucide-react';
 
 const weddingDate = new Date('2026-12-04T19:00:00+05:30').getTime();
 const saveTheDateVideo = 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/IMG_1665.MOV';
@@ -20,7 +20,6 @@ export default function Home() {
   const [opened, setOpened] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [musicOn, setMusicOn] = useState(false);
-  const [videoSoundOn, setVideoSoundOn] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState('');
   const [rsvpSending, setRsvpSending] = useState(false);
   const [attendance, setAttendance] = useState<'yes' | 'no' | ''>('');
@@ -91,7 +90,6 @@ export default function Home() {
             className="absolute inset-0 h-full w-full object-contain"
             src={saveTheDateVideo}
             autoPlay
-            muted={!videoSoundOn}
             playsInline
             preload="auto"
             onTimeUpdate={event => {
@@ -133,16 +131,6 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 border-[10px] border-[#f5ead5]/25 sm:border-[18px]" />
 
 
-
-          <button
-            type="button"
-            className="absolute bottom-5 left-5 z-20 rounded-full border border-white/60 bg-black/30 p-3 text-white"
-            onClick={() => setVideoSoundOn(value => !value)}
-            aria-label={videoSoundOn ? 'Mute video' : 'Unmute video'}
-            title={videoSoundOn ? 'Mute video' : 'Unmute video'}
-          >
-            {videoSoundOn ? <Volume2 size={16} /> : <VolumeX size={16} />}
-          </button>
 
           <button
             className="absolute bottom-5 right-5 z-20 rounded-full border border-white/60 bg-black/30 px-4 py-2 text-xs text-white"
