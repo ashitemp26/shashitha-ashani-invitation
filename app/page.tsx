@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, Sparkles } from 'lucide-react';
 
 const weddingDate = new Date('2026-12-04T19:00:00+05:30').getTime();
-const saveTheDateVideo = 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/IMG_1665.MOV';
+const saveTheDateVideo = '/video.mp4';
 const photos = [
-  { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4595.jpg.jpeg', alt: 'Moments to Remember' },
-  { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4555.jpg.jpeg', alt: 'Love in the Moment' },
-  { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4550.jpg.jpeg', alt: 'A Little More Us' },
+  { src: '/WBP_4595.jpg.webp', alt: 'Moments to Remember' },
+  { src: '/WBP_4555.jpg.webp', alt: 'Love in the Moment' },
+  { src: '/WBP_4550.jpg.webp', alt: 'A Little More Us' },
 ];
 const photoCaptions = ['Moments to Remember', 'Love in the Moment', 'A Little More Us'];
-const storyPhoto = { src: 'https://xuk8mrqifju4zmcf.public.blob.vercel-storage.com/WBP_4575.jpg.jpeg', alt: 'Wedding couple holding hands' };
+const storyPhoto = { src: '/WBP_4575.jpg.webp', alt: 'Wedding couple holding hands' };
 
 function FloralMark({ className = '' }: { className?: string }) { return <svg className={className} viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M60 106C60 79 58 48 60 14M60 74C42 72 31 59 30 42C48 43 60 55 60 74ZM60 88C77 85 91 70 91 53C74 55 61 69 60 88Z" stroke="currentColor" strokeWidth="1.1" /><path d="M60 39C45 28 49 14 60 8C71 14 75 28 60 39ZM60 39C43 40 34 29 39 17C52 18 59 26 60 39ZM60 39C77 40 86 29 81 17C68 18 61 26 60 39Z" stroke="currentColor" strokeWidth="1.1" /></svg> }
 
