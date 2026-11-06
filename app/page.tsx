@@ -118,11 +118,14 @@ export default function Home() {
               <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.4em] text-[#f7ebd6]/90 sm:text-xs">
                 Save the Date
               </p>
+              <p className="mb-2 text-sm font-medium tracking-[0.25em] text-[#f7ebd6]/95 sm:text-base">
+                04-12-2026
+              </p>
               <h1 className="save-date-names text-4xl font-normal sm:text-6xl">
                 Ashani <span className="italic text-[#ead4a7]">&</span> Shashitha
               </h1>
 
-              <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
+              <div className="mx-auto mt-8 h-px w-14 bg-[#d7bd85]" />
             </div>
           </motion.div>
 
