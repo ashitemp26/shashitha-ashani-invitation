@@ -1425,7 +1425,9 @@ button {
     border-radius: 16px;
     background: var(--white);
     color: var(--ink);
-    font: 18px var(--font-cormorant), serif;
+    font: 500 12px var(--font-cormorant), serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
     cursor: pointer
 }
 
