@@ -1779,12 +1779,24 @@ button {
     }
 
     .rsvp-form {
-        gap: 20px 12px
+        gap: 0 12px
     }
 
     .rsvp-question {
         gap: 2px;
         margin-bottom: 8px
+    }
+
+    .rsvp-response {
+        margin-bottom: 14px
+    }
+
+    .rsvp-name {
+        margin-bottom: 8px
+    }
+
+    .rsvp-guest-count {
+        margin-bottom: 18px
     }
 
     .rsvp-question legend {
@@ -1823,6 +1835,7 @@ button {
 
     .rsvp-submit {
         min-height: 44px;
+        margin-top: 0;
         padding: 0 18px
     }
 
