@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Music2, VolumeX, Heart, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, CalendarDays, MapPin, Heart, Sparkles } from 'lucide-react';
 
 const weddingDate = new Date('2026-12-04T19:00:00+05:30').getTime();
 const saveTheDateVideo = '/video.mp4';
@@ -21,7 +21,6 @@ export default function Home() {
   const [videoStarted, setVideoStarted] = useState(false);
   const [saveDateVisible, setSaveDateVisible] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [musicOn, setMusicOn] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState('');
   const [rsvpSending, setRsvpSending] = useState(false);
   const [attendance, setAttendance] = useState<'yes' | 'no' | ''>('');
@@ -151,9 +150,6 @@ export default function Home() {
         </motion.div>
       )}
     </AnimatePresence>
-
-    <button className="music-toggle" onClick={() => setMusicOn(v => !v)} aria-label={musicOn ? 'Turn music off' : 'Turn music on'}>{musicOn ? <Music2 size={16} /> : <VolumeX size={16} />}<span>{musicOn ? 'Music on' : 'Music off'}</span></button>
-
 
     <motion.section
       className="invitation-section section-pad"
