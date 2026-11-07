@@ -114,27 +114,29 @@ export default function Home() {
             }}
           />
 
-          <motion.div
-            className="pointer-events-none absolute inset-0"
-            animate={{ opacity: saveDateVisible ? 1 : 0 }}
-            transition={{ duration: 3, ease: 'easeInOut' }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
+          {videoStarted && (
+            <motion.div
+              className="pointer-events-none absolute inset-0"
+              animate={{ opacity: saveDateVisible ? 1 : 0 }}
+              transition={{ duration: 3, ease: 'easeInOut' }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
 
-            <div className="absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
-              <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.4em] text-[#f7ebd6]/90 sm:text-xs">
-                Save the Date
-              </p>
-              <p className="mb-2 text-sm font-medium tracking-[0.25em] text-[#f7ebd6]/95 sm:text-base">
-                04-12-2026
-              </p>
-              <h1 className="save-date-names text-4xl font-normal sm:text-6xl">
-                Ashani <span className="italic text-[#ead4a7]">&</span> Shashitha
-              </h1>
+              <div className="absolute inset-x-0 bottom-[12%] z-10 px-5 text-center text-white">
+                <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.4em] text-[#f7ebd6]/90 sm:text-xs">
+                  Save the Date
+                </p>
+                <p className="mb-2 text-sm font-medium tracking-[0.25em] text-[#f7ebd6]/95 sm:text-base">
+                  04-12-2026
+                </p>
+                <h1 className="save-date-names text-4xl font-normal sm:text-6xl">
+                  Ashani <span className="italic text-[#ead4a7]">&</span> Shashitha
+                </h1>
 
-              <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
-            </div>
-          </motion.div>
+                <div className="mx-auto mt-5 h-px w-14 bg-[#d7bd85]" />
+              </div>
+            </motion.div>
+          )}
 
           <div className="pointer-events-none absolute inset-0 border-[10px] border-[#f5ead5]/25 sm:border-[18px]" />
 

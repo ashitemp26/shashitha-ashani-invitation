@@ -830,7 +830,7 @@ button {
 }
 
 .gallery-photo.photo-3 img {
-    object-position: center bottom
+    object-position: center 68%
 }
 
 .gallery-photo:after {
