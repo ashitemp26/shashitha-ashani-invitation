@@ -19,6 +19,7 @@ function FloralMark({ className = '' }: { className?: string }) { return <svg cl
 export default function Home() {
   const [opened, setOpened] = useState(false);
   const [videoStarted, setVideoStarted] = useState(false);
+  const [saveDateVisible, setSaveDateVisible] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [musicOn, setMusicOn] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState('');
@@ -94,10 +95,19 @@ export default function Home() {
             preload="metadata"
             controls
             onPlay={() => {
-              setVideoStarted(true);
+              if (!videoStarted) {
+                setVideoStarted(true);
+                setSaveDateVisible(true);
+              }
               void blurredVideoRef.current?.play().catch(() => {});
             }}
             onPause={() => blurredVideoRef.current?.pause()}
+            onTimeUpdate={event => {
+              const video = event.currentTarget;
+              if (video.currentTime >= 16) {
+                setSaveDateVisible(false);
+              }
+            }}
             onEnded={reveal}
             onError={() => {
               console.error('The Save the Date video could not be loaded.');
@@ -106,7 +116,7 @@ export default function Home() {
 
           <motion.div
             className="pointer-events-none absolute inset-0"
-            animate={{ opacity: videoStarted ? 1 : 0 }}
+            animate={{ opacity: saveDateVisible ? 1 : 0 }}
             transition={{ duration: 3, ease: 'easeInOut' }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
