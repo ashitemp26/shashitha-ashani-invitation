@@ -8,7 +8,7 @@ const italianno = Italianno({ subsets: ['latin'], variable: '--font-italianno', 
 const tangerine = Tangerine({ subsets: ['latin'], variable: '--font-tangerine', weight: ['400','700'] });
 export const metadata: Metadata = {
 	metadataBase: new URL('https://shashitha-ashani-invitation.vercel.app'),
-	title: 'Shashitha & Ashani | Wedding Invitation',
+	title: 'Ashani & Shashitha | Wedding Invitation',
 	description: 'Together with our families, we invite you to celebrate our wedding on 4 December 2026.',
 	openGraph: {
 		title: 'Shashitha & Ashani | Wedding Invitation',
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 		url: '/',
 		siteName: 'Shashitha & Ashani',
 		type: 'website',
-		images: [{ url: '/WBP_4555.jpg.webp', alt: 'Shashitha and Ashani together' }],
+		images: [{ url: '/WBP_4595.jpg.webp', alt: 'Shashitha and Ashani together' }],
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Shashitha & Ashani | Wedding Invitation',
+		title: 'Ashani & Shashitha | Wedding Invitation',
 		description: 'Together with our families, we invite you to celebrate our wedding on 4 December 2026.',
-		images: ['/WBP_4555.jpg.webp'],
+		images: ['/WBP_4595.jpg.webp'],
 	},
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body className={`${cormorant.variable} ${manrope.variable} ${script.variable} ${italianno.variable} ${tangerine.variable}`}>{children}</body></html>; }
