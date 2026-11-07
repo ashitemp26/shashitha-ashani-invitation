@@ -18,6 +18,7 @@ function FloralMark({ className = '' }: { className?: string }) { return <svg cl
 
 export default function Home() {
   const [opened, setOpened] = useState(false);
+  const [videoStarted, setVideoStarted] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [musicOn, setMusicOn] = useState(false);
   const [rsvpStatus, setRsvpStatus] = useState('');
@@ -26,8 +27,7 @@ export default function Home() {
   const [rsvpTeam, setRsvpTeam] = useState<'bride' | 'groom' | ''>('');
   const [rsvpRelationship, setRsvpRelationship] = useState<'office' | 'friend' | ''>('');
   const [rsvpGuests, setRsvpGuests] = useState<'1' | '2' | ''>('');
-  const [saveDateVisible, setSaveDateVisible] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const blurredVideoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const update = () => { const diff = Math.max(0, weddingDate - Date.now()); setTimeLeft({ days: Math.floor(diff / 86400000), hours: Math.floor(diff / 3600000) % 24, minutes: Math.floor(diff / 60000) % 60, seconds: Math.floor(diff / 1000) % 60 }); };
     update(); const timer = window.setInterval(update, 1000); return () => window.clearInterval(timer);
@@ -77,29 +77,27 @@ export default function Home() {
           */}
           {/* Blurred background  blur-sm blur blur-md blur-lg blur-2xl*/}
           <video
+            ref={blurredVideoRef}
             className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-md"
             src={saveTheDateVideo}
-            autoPlay
             muted
             playsInline
             loop
-            preload="auto"
+            preload="none"
           />
 
           {/* Main video — full frame visible */}
           <video
-            ref={videoRef}
             className="absolute inset-0 h-full w-full object-contain"
             src={saveTheDateVideo}
             playsInline
             preload="metadata"
             controls
-            onTimeUpdate={event => {
-              const video = event.currentTarget;
-              if (video.currentTime >= 16) {
-                setSaveDateVisible(false);
-              }
+            onPlay={() => {
+              setVideoStarted(true);
+              void blurredVideoRef.current?.play().catch(() => {});
             }}
+            onPause={() => blurredVideoRef.current?.pause()}
             onEnded={reveal}
             onError={() => {
               console.error('The Save the Date video could not be loaded.');
@@ -108,7 +106,7 @@ export default function Home() {
 
           <motion.div
             className="pointer-events-none absolute inset-0"
-            animate={{ opacity: saveDateVisible ? 1 : 0 }}
+            animate={{ opacity: videoStarted ? 1 : 0 }}
             transition={{ duration: 3, ease: 'easeInOut' }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />

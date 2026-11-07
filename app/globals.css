@@ -829,6 +829,10 @@ button {
     object-position: center 90%
 }
 
+.gallery-photo.photo-3 img {
+    object-position: center 90%
+}
+
 .gallery-photo:after {
     content: "";
     position: absolute;
@@ -1727,7 +1731,11 @@ button {
     }
 
     .gallery-photo.photo-2 img {
-        object-position: center
+        object-position: center 41%
+    }
+
+    .gallery-photo.photo-3 img {
+        object-position: center 41%
     }
 
     .gallery-photo.photo-1,
