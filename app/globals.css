@@ -830,7 +830,7 @@ button {
 }
 
 .gallery-photo.photo-3 img {
-    object-position: center 90%
+    object-position: center bottom
 }
 
 .gallery-photo:after {
@@ -1735,7 +1735,7 @@ button {
     }
 
     .gallery-photo.photo-3 img {
-        object-position: center 41%
+        object-position: center
     }
 
     .gallery-photo.photo-1,
